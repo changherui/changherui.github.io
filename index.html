@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
+    <title>个人主页 - 多语言切换</title>
     <style>
         * {
             margin: 0;
@@ -25,13 +25,52 @@
             margin: 1.5rem 0;
             color: #666;
         }
+        .lang-btn {
+            padding: 8px 16px;
+            margin: 1rem 0;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1>你的姓名</h1>
-    <div class="info">
-        <p>简介：这里写你的个人简介，比如职业、兴趣等</p>
-        <p>联系方式：邮箱：your@email.com | 社交媒体：[链接]</p>
+    <!-- 语言切换按钮 -->
+    <button class="lang-btn" onclick="switchLanguage('zh')">中文</button>
+    <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+
+    <!-- 中文内容 -->
+    <div id="zhContent">
+        <h1>你的姓名</h1>
+        <div class="info">
+            <p>简介：这里写你的个人简介，比如职业、兴趣等</p>
+            <p>联系方式：邮箱：your@email.com | 社交媒体：[链接]</p>
+        </div>
     </div>
+
+    <!-- 英文内容 -->
+    <div id="enContent" class="hidden">
+        <h1>Your Name</h1>
+        <div class="info">
+            <p>Bio: Write your personal bio here, such as profession, interests, etc.</p>
+            <p>Contact: Email: your@email.com | Social Media: [Link]</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            const zhContent = document.getElementById('zhContent');
+            const enContent = document.getElementById('enContent');
+            
+            if (lang === 'zh') {
+                zhContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
+            } else {
+                zhContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
