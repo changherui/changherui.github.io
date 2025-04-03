@@ -459,3 +459,18 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* 在CSS中添加 */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* 默认隐藏菜单 */
+    flex-direction: column;
+  }
+  
+  .menu-toggle {
+    display: block !important; /* 显示汉堡按钮 */
+    padding: 0.5rem;
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+  }
+}
