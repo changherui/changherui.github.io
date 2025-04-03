@@ -459,22 +459,24 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-/* 手机端导航栏优化 */
+/* 新增：手机端专属优化（针对768px以下屏幕） */
 @media (max-width: 768px) {
-  nav {
-    padding: 0.5rem 0 !important; /* 减少上下间距 */
-  }
-  
-  nav ul {
-    flex-wrap: wrap; /* 允许菜单项换行 */
-  }
-  
-  nav li {
-    margin: 0.3rem 0.5rem !important; /* 减小菜单项间距 */
-  }
-  
-  nav a {
-    padding: 0.3rem !important; /* 减小点击区域 */
-    font-size: 0.9rem !important; /* 缩小字体 */
-  }
+    nav {
+        padding: 0.3rem 0; /* 减少导航栏整体高度 */
+    }
+    
+    nav ul {
+        flex-wrap: wrap; /* 允许菜单项换行显示 */
+        padding: 0.5rem; /* 增加内边距避免拥挤 */
+    }
+    
+    nav li {
+        margin: 0.2rem 0.5rem !important; /* 大幅减少菜单项间距 */
+        flex-shrink: 0; /* 防止菜单项被压缩 */
+    }
+    
+    nav a {
+        padding: 0.5rem 0.3rem !important; /* 减小点击区域 */
+        font-size: 0.85rem; /* 适当缩小字体 */
+    }
 }
