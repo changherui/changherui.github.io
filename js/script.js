@@ -9,6 +9,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('nav ul').classList.toggle('show');
+});
+
 // 导航栏高亮
 const sections = document.querySelectorAll('.section');
 const navItems = document.querySelectorAll('nav ul li a');
