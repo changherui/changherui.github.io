@@ -459,18 +459,22 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-/* 在CSS中添加 */
+/* 手机端导航栏优化 */
 @media (max-width: 768px) {
-  nav ul {
-    display: none; /* 默认隐藏菜单 */
-    flex-direction: column;
+  nav {
+    padding: 0.5rem 0 !important; /* 减少上下间距 */
   }
   
-  .menu-toggle {
-    display: block !important; /* 显示汉堡按钮 */
-    padding: 0.5rem;
-    text-align: center;
-    background: var(--primary-color);
-    color: white;
+  nav ul {
+    flex-wrap: wrap; /* 允许菜单项换行 */
+  }
+  
+  nav li {
+    margin: 0.3rem 0.5rem !important; /* 减小菜单项间距 */
+  }
+  
+  nav a {
+    padding: 0.3rem !important; /* 减小点击区域 */
+    font-size: 0.9rem !important; /* 缩小字体 */
   }
 }
