@@ -461,22 +461,22 @@ footer {
 }
 /* 新增：手机端专属优化（针对768px以下屏幕） */
 @media (max-width: 768px) {
-    nav {
-        padding: 0.3rem 0; /* 减少导航栏整体高度 */
-    }
-    
     nav ul {
-        flex-wrap: wrap; /* 允许菜单项换行显示 */
-        padding: 0.5rem; /* 增加内边距避免拥挤 */
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr); /* 三列等宽 */
+        grid-template-rows: repeat(2, auto);   /* 两行 */
+        gap: 0.3rem;                          /* 项间距 */
+        padding: 0.5rem;                      /* 内边距 */
     }
     
     nav li {
-        margin: 0.2rem 0.5rem !important; /* 大幅减少菜单项间距 */
-        flex-shrink: 0; /* 防止菜单项被压缩 */
+        margin: 0 !important;      /* 清除原有外边距 */
+        text-align: center;       /* 文字居中 */
     }
     
     nav a {
-        padding: 0.5rem 0.3rem !important; /* 减小点击区域 */
-        font-size: 0.85rem; /* 适当缩小字体 */
+        padding: 0.5rem 0.3rem !important;
+        font-size: 0.85rem;
+        white-space: nowrap;      /* 禁止文字换行 */
     }
 }
