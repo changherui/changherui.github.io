@@ -1,198 +1,651 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人简历 - 您的名字</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Herui (Henry) CHANG | 常贺瑞</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+        }
+
+        .language-toggle {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #495057;
+            transition: background-color 0.2s ease;
+        }
+
+        .language-toggle:hover {
+            background: #e9ecef;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 8px;
+        }
+
+        .subsection {
+            margin-bottom: 25px;
+        }
+        .subsection-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 8px;
+            display: flex; /* 添加 flex 布局 */
+            justify-content: space-between; /* 子元素两端对齐 */
+            align-items: baseline; /* 保持标题基线对齐 */
+        }
+
+        .institution {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .degree {
+            color: #5a6c7d;
+            margin-bottom: 4px;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .position {
+            color: #5a6c7d;
+            margin-bottom: 4px;
+        }
+
+        .description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex; /* 添加 flex 布局 */
+            justify-content: space-between; /* 子元素两端对齐 */
+            align-items: baseline; /* 保持标题基线对齐 */
+        }
+        /* 添加一个新的类来控制时间靠右 */
+        .right-aligned-date {
+            font-size: 0.9rem; /* 可以调整字体大小以匹配您的设计 */
+            color: #7f8c8d; /* 可以调整颜色 */
+            white-space: nowrap; /* 防止时间换行 */
+            margin-left: 15px; /* 与标题保持一定间距 */
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .subsection-title, .project-title {
+                flex-direction: column; /* 小屏幕下堆叠显示 */
+                align-items: flex-start; /* 左对齐 */
+            }
+            .right-aligned-date {
+                margin-left: 0; /* 小屏幕下取消左边距 */
+                margin-top: 5px; /* 在标题下方添加上边距 */
+            }
+        }
+        ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #5a6c7d;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 12px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .skill-details {
+            color: #5a6c7d;
+            font-size: 0.9rem;
+        }
+
+        .awards-list {
+            margin-left: 0;
+            list-style: none;
+        }
+
+        .awards-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .awards-list li:before {
+            content: "•";
+            color: #95a5a6;
+            position: absolute;
+            left: 0;
+        }
+
+        .additional-info {
+            margin-left: 0;
+            list-style: none;
+        }
+
+        .additional-info li {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .additional-info li:before {
+            content: "•";
+            color: #95a5a6;
+            position: absolute;
+            left: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>您的名字</h1>
-            <p>人工智能与机器人硕士 | 数据科学家 | 研究员</p>
-            <div class="language-switch">
-                <a href="en.html">EN</a> | <span class="active">中文</span>
+    <div class="header">
+        <h1 class="title">Herui (Henry) CHANG | 常贺瑞</h1>
+        <button class="language-toggle" onclick="toggleLanguage()">
+            <span id="toggle-text">EN/中文</span>
+        </button>
+    </div>
+    </div> <div style="font-size: 1rem; color: #5a6c7d; margin-bottom: 20px;">E-mail: heruichang@link.cuhk.edu.cn</div>
+    <!-- English Content -->
+    <div id="english-content">
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="subsection">
+                <div class="institution">The Chinese University of Hong Kong, Shenzhen</div>
+                <div class="degree">M.Sc. in Artificial Intelligence and Robotics, School of Data Science</div>
+                <div class="date">Aug 2024--Present  Expected Jun. 2026</div>
+            </div>
+
+            <div class="subsection">
+                <div class="institution">China University of Geosciences, Wuhan</div>
+                <div class="degree">B.Sc. in Physics (GPA: 88.33) & Minor in Economics (GPA: 89.23), School of Mathematics and Physics</div>
+                <div class="date">Sep 2020--Jun 2024</div>
             </div>
         </div>
-    </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#education">教育背景</a></li>
-                <li><a href="#experience">经历</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#awards">荣誉</a></li>
-                <li><a href="#contact">联系</a></li>
+        <div class="section">
+            <h2 class="section-title">Internship</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span>SDIC SECURITIES CO., LTD. Beijing, China</span>
+                    <span class="right-aligned-date">Summer, 2024</span>
+                </div>
+                <div class="position">Investment Research Intern</div>
+                <div class="description">A fully licensed comprehensive securities firm established in 2006, with multiple business rankings ranking among the top in the country.</div>
+                <div class="description">Investment Research Intern, Electronic Industry Research Team. Conducted research in the electronics industry, authored various reports, compiled industry and company data, and utilized financial models.</div>
+                <ul>
+                    <li>Collected data and news on industries and companies within the Apple ecosystem to complete research and author in-depth report on the Apple supply chain industry empowered by Apple Intelligence.</li>
+                    <li>Conducted business reviews and assessments for electronic component suppliers including Yangjie Technology, Oriental Semi and Light Electronics.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span>MESWAY TECHNOLOGY CO. LTD. Wuhan, China</span>
+                    <span class="right-aligned-date">Summer, 2023</span>
+                </div>
+                <div class="position">Hardware Engineer Intern</div>
+                <div class="description">A high-tech enterprise established in 2013 engaged in research, design, and technical services of optoelectronic equipment.</div>
+                <div class="description">Hardware Engineer Intern, R&D Center. Assembled and calibrated optoelectronic experimental instruments, Independently managed entire process of circuit design, simulation, programming, PCB fabrication, and debugging.</div>
+                <ul>
+                    <li>Directed all interns, handled communications and coordination with businesses, and was ultimately recognized as an Outstanding Intern.</li>
+                    <li>Successfully developed the most advanced intelligent temperature detection circuit system within the team.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>Qwen2.5 Legal LLM Fine-tuning with LoRA</span>
+                    <span class="right-aligned-date">Summer, 2025</span>
+                </div>
+                <ul>
+                    <li>Fine-tuned Qwen2.5 Large Language Models on the DISC-Law-SFT Chinese legal dataset, enhancing domain-specific knowledge and text generation capabilities while optimizing resource utilization.</li>
+                    <li>Engineered an efficient fine-tuning pipeline by integrating 4-bit quantization and LoRA, reducing trainable parameters and overcoming computational constraints.</li>
+                    <li>Adapted LLMs to the legal domain, generating contextually relevant answers as validated by qualitative evaluations and consistently decreasing training loss.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>Chinese-to-English NMT using Seq2Seq Attention and MinGPT</span>
+                    <span class="right-aligned-date">Summer, 2025</span>
+                </div>
+                <ul>
+                    <li>Developed and evaluated two Neural Machine Translation systems for Chinese-to-English translation: Bahdanau attention-based Seq2Seq model and a fine-tuned MinGPT Transformer, trained on approximately 30,000 sentence pairs.</li>
+                    <li>Engineered the Seq2Seq model with a Bidirectional GRU encoder and attention mechanism, and adapted the MinGPT model by concatenating Chinese and English sequences for autoregressive prediction.</li>
+                    <li>Implemented comprehensive data preprocessing and successfully trained both models, achieving reasonable translation quality.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>PyTorch & Native Implementation for Image Classification Networks</span>
+                    <span class="right-aligned-date">Spring, 2025</span>
+                </div>
+                <ul>
+                    <li>Designed and optimized deep neural networks for image classification on CIFAR-10 and MNIST datasets, encompassing both iteratively enhanced PyTorch-based architecture and NumPy implementation of core components.</li>
+                    <li>Implemented techniques including ResNet transfer learning, AdamW with cosine annealing, strategic Dropout, and data augmentation, significantly boosting model performance, achieving 94.3% accuracy on CIFAR-10 and 99.56% on MNIST.</li>
+                    <li>Manually implemented neural network core components such as activation functions, convolutional layers, and optimizers using NumPy, achieving 97.29% accuracy on the dataset.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>Impact of Complex Poisson Ratio on Sound Transmission Dissipation</span>
+                    <span class="right-aligned-date">2023-2024</span>
+                </div>
+                <ul>
+                    <li>Utilized theoretical models and simulation (COMSOL Multiphysics) to derive the Poisson loss factor and its influence on elastic wave absorption rates.</li>
+                    <li>Designed artificial metamaterials with a transverse wave absorption rate of 99.84% at a resonance frequency of 82.1705 Hz, while attaining only 0.286% for longitudinal waves, highlighting absorption differentiation.</li>
+                    <li>Developed a methodology for calculating equivalent shear and bulk moduli, enhancing understanding of energy dissipation in viscoelastic materials.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>Meta-Analysis of the Effects of Virtual Immersion in Green Nature on Affect</span>
+                    <span class="right-aligned-date">Summer, 2023</span>
+                </div>
+                <ul>
+                    <li>Analyzed data using RevMan software, synthesizing results from 13 quantitative studies (n=1917), achieving a standardized mean difference (SMD) of 0.42 for positive affect and -0.39 for negative affect.</li>
+                    <li>Employed advanced statistical methods to generate and interpret forest plots and funnel plots, assessing potential publication bias and heterogeneity through results.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>RV Signal Detection with Bayesian Approach for Exoplanet Detection</span>
+                    <span class="right-aligned-date">Spring, 2023</span>
+                </div>
+                <ul>
+                    <li>Utilized the Agatha to analyze radial velocity (RV) data, integrating Bayesian periodogram techniques to detect periodic signals in time series data.</li>
+                    <li>Conducted data analysis on GJ551-ESPRESSO datasets for exoplanets, utilizing ARMA and MCMC models to get the orbital solutions and estimate parameters.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>Total Wave Conversion in Ultrathin Metamaterials with Anisotropic Resonance</span>
+                    <span class="right-aligned-date">2021-2022</span>
+                </div>
+                <ul>
+                    <li>Developed the ultrathin metamaterial plate composed of an array of anisotropic resonators obliquely-oriented, achieving over 95% conversion rate between P and S waves at wavelengths two orders of magnitude larger than its thickness.</li>
+                    <li>Designed and refined the theoretical framework for elastic wave mode conversion using a mass--spring model, realizing a quantitative agreement with simulation results through analytical calculations.</li>
+                    <li>Dominated theoretical derivation and partial simulation modeling as the second core contributor, achieving the first SCI publication in the same academic cohort.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Awards & Honors</h2>
+            <ul class="awards-list">
+                <li>2024 Chinese University of Hong Kong (Shenzhen) Postgraduate Admission Scholarship</li>
+                <li>2024 China University of Geosciences (Wuhan) Top 10 Model Students (Top 10, Highest undergraduate honor)</li>
+                <li>2024 Outstanding Graduate</li>
+                <li>2021, 2022 President's Scholarship (Top 5%), 2023 Alumni Scholarship (Top 10)</li>
+                <li>2021, 2023 University-level Outstanding Student Leader, 2022 University-level Outstanding Student</li>
+                <li>2023 "Pioneer of Mathematics and Physics" Person of the Year (Highest honor in the School)</li>
+                <li>Numerous awards in academic competitions, innovation competitions, and social practice. (Accumulated over 30 awards, scholarships, and honorary titles during university studies)</li>
             </ul>
         </div>
-    </nav>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>香港中文大学(深圳)数据科学学院人工智能与机器人硕士在读，中国地质大学(武汉)物理学与经济学双学士。拥有扎实的数理基础、跨学科背景和丰富的实践经验。</p>
-                    <p>在科研、金融分析和硬件工程等多个领域均有涉猎，具备强大的学习能力和适应能力。同时拥有丰富的学生工作和社会服务经验，组织能力强，善于团队协作。</p>
+        <div class="section">
+            <h2 class="section-title">Skills & Certificates</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-name">Programming & Software:</div>
+                    <div class="skill-details">Python (PyTorch/TensorFlow), R, COMSOL, ImageJ, LaTeX (Proficient); Matlab, SPSS (Basic)</div>
                 </div>
-                <div class="about-image">
-                    <img src="images/profile.jpg" alt="个人照片">
+                <div class="skill-category">
+                    <div class="skill-name">Languages:</div>
+                    <div class="skill-details">Passed College English Test Band 4/6 (CET-4/6), IELTS Score 7 (Proficient in listening, speaking, reading, and writing); Mandarin Chinese Level 1-B</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-name">Certifications:</div>
+                    <div class="skill-details">(AI+RPA) Developer Intermediate Engineer Certification; Tencent Future Product Manager Creation Camp Completion Certificate</div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="education" class="section">
-        <div class="container">
-            <h2>教育背景</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2024.08-今</div>
-                    <div class="timeline-content">
-                        <h3>香港中文大学(深圳) - 数据科学学院</h3>
-                        <p>人工智能与机器人硕士</p>
-                    </div>
+        <div class="section">
+            <h2 class="section-title">Additional Information</h2>
+            <ul class="additional-info">
+                <li><strong>Leadership & Event Management:</strong> Held over 10 student and social work positions, including Student Union President. Organized and participated in over 50 events, reaching more than 10,000 participants, with new media readership exceeding 600,000 views. Developed strong self-control and emotional stability, excellent communication, coordination, responsibility, and stress resilience in multi-tasking roles. Able to adapt to high-intensity, multi-tasking work environments.</li>
+                <li><strong>Rapid Learning Ability:</strong> Demonstrated outstanding ability to quickly learn new software operations and theoretical concepts.</li>
+                <li><strong>Volunteer Experience:</strong> Participated in various volunteer activities, including the Olympic Games, science popularization, epidemic prevention and control, international education, and astronomical observation, accumulating over 200 hours of service.</li>
+                <li><strong>Teaching & Knowledge Sharing:</strong> Worked as a part-time tutor, teaching over 100 students for several years and receiving consistent positive feedback from students and parents. Actively shares knowledge online through multiple educational videos, with over 7,000 views.</li>
+                <li><strong>Media Coverage:</strong> Personal achievements have been reported by various levels of media in over 40 articles.</li>
+                <li><strong>Hobbies:</strong> Photography, Swimming, Traveling, Golf.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chinese Content -->
+    <div id="chinese-content" class="hidden">
+        <div class="section">
+            <h2 class="section-title">教育背景</h2>
+            
+            <div class="subsection">
+                <div class="institution">香港中文大学（深圳）数据科学学院</div>
+                <div class="degree">硕士 人工智能与机器人</div>
+                <div class="date">2024.08 -- 今 预计2026年7月毕业</div>
+            </div>
+
+            <div class="subsection">
+                <div class="institution">中国地质大学（武汉）数学与物理学院</div>
+                <div class="degree">本科 物理学(GPA 88.33) 经济学(GPA 89.23)</div>
+                <div class="date">2020.09 -- 2024.06</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">实习</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span>国投证券股份有限公司</span>
+                    <span class="right-aligned-date">2024 夏</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2020.09-2024.06</div>
-                    <div class="timeline-content">
-                        <h3>中国地质大学(武汉) - 数学与物理学院</h3>
-                        <p>物理学(GPA 88.33)与经济学(GPA 89.23)双学士</p>
-                    </div>
+                <div class="position">投资研究岗位</div>
+                <ul>
+                    <li>搜集整理苹果生态相关行业、公司数据及动态信息，完成课题研究，撰写AI赋能下的苹果供应链行业深度报告。</li>
+                    <li>完成对扬杰科技、东微半导、大族激光、莱特光电等电子器件产品供应商的业务梳理与中报点评。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span>武汉麦思威科技有限公司</span>
+                    <span class="right-aligned-date">2023 夏</span>
+                </div>
+                <div class="position">硬件工程师岗位</div>
+                <ul>
+                    <li>协助带教组装、调试光电实验仪器，并焊接、装配各类电子模块与产品。</li>
+                    <li>学习并熟练使用Altium Designer、Keil、Proteus等电子设计与仿真软件，独立完成电路设计、仿真、编程、PCB打板、调试等流程，制作出组内完成度最高的智能温度检测电路系统。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">项目</h2>
+            
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>基于LoRA的Qwen2.5法律领域LLM微调</span>
+                    <span class="right-aligned-date">2025 夏</span>
+                </div>
+                <ul>
+                    <li>在DISC-Law-SFT中文法律数据集上微调Qwen2.5大语言模型，增强了模型在法律领域的专业知识和文本生成能力，并优化了资源利用效率。</li>
+                    <li>通过结合4位量化与参数高效微调（PEFT）及LoRA技术，构建了高效的微调流程，显著减少了可训练参数，有效克服了计算资源限制。</li>
+                    <li>成功使LLM适应法律领域，能够生成与语境相关的法律回答，并通过定性评估和训练损失曲线验证了其有效性。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>基于注意力Seq2Seq与MinGPT的中英神经机器翻译</span>
+                    <span class="right-aligned-date">2025 夏</span>
+                </div>
+                <ul>
+                    <li>开发并对比评估了两个用于中英机器翻译的神经网络机器翻译系统：基于Bahdanau注意力机制的Seq2Seq模型和经过微调的MinGPT Transformer。</li>
+                    <li>在约30,000对句子语料库上进行训练，进行了全面的数据预处理，包括中英文的BERT分词，并成功训练了两个模型，均实现了合理的翻译质量。</li>
+                    <li>设计了带有双向GRU编码器和注意力机制的Seq2Seq模型，并通过连接中英序列进行自回归预测来适配MinGPT模型。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>基于PyTorch与原生实现的图像分类神经网络架构优化</span>
+                    <span class="right-aligned-date">2025 春</span>
+                </div>
+                <ul>
+                    <li>设计并优化了用于CIFAR-10和MNIST数据集的深度神经网络，涵盖基于PyTorch迭代增强的残差架构，以及从零开始的NumPy核心组件实现。</li>
+                    <li>使用包括ResNet迁移学习、AdamW结合余弦退火、Dropout和数据增强在内的深度学习技术，将 CIFAR-10 测试集准确率提升至 94.3%，MNIST 测试集准确率高达 99.56%。</li>
+                    <li>基于NumPy手动实现激活函数、卷积层、优化器等神经网络核心组件，在数据集上实现 97.29% 的准确率，深度掌握网络底层原理与运作机制。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>复泊松比对声波传输耗散的影响研究</span>
+                    <span class="right-aligned-date">2023-2024</span>
+                </div>
+                <ul>
+                    <li>利用理论建模与仿真模拟推导泊松损耗因子并分析其对吸收率的影响。</li>
+                    <li>设计了在共振频率为82.1705 Hz时横波吸收率高达99.84%、而纵波吸收率仅为0.286%的人工超材料，体现出显著的吸收选择性。</li>
+                    <li>构建等效剪切模量与体积模量计算方法，深化了对能量耗散机制的理解。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>关于虚拟沉浸绿色自然对情绪的影响的meta分析</span>
+                    <span class="right-aligned-date">2023 夏</span>
+                </div>
+                <ul>
+                    <li>使用 RevMan 软件对 13 项定量研究（n=1917）的数据进行整合分析，得出积极情感的标准化平均差（SMD）为 0.42，消极情感的标准化平均差（SMD）为 -0.39。</li>
+                    <li>运用高级统计方法生成并解读了森林图和漏斗图，以评估潜在的发表偏倚和研究异质性。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>基于贝叶斯方法的系外行星径向速度信号探测</span>
+                    <span class="right-aligned-date">2023 春</span>
+                </div>
+                <ul>
+                    <li>运用Agatha工具对GJ551-ESPRESSO数据集径向速度（RV）数据进行分析，结合贝叶斯周期图技术识别时间序列中的周期性信号。</li>
+                    <li>使用ARMA模型与MCMC方法获取轨道解并估计相关参数。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+              	<div class="project-title">
+                    <span>具有各向异性共振的超薄弹性超材料实现纵波和横波的全转换</span>
+                    <span class="right-aligned-date">2021-2022</span>
+                </div>
+                <ul>
+                    <li>设计由倾斜排列的各向异性谐振器构成的超薄超材料板，实现了在入射波长远大于厚度的条件下，P波与S波之间超过95%的高效转换。</li>
+                    <li>构建并完善了基于质量--弹簧模型的弹性波模态转换理论框架，达到解析计算结果与仿真结果高度一致。</li>
+                    <li>主导理论推导与部分仿真工作，成为同年级首位发表SCI论文的本科生。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">奖项&荣誉</h2>
+            <ul class="awards-list">
+                <li>2024香港中文大学（深圳）研究生入学奖学金</li>
+                <li>2024年中国地质大学十大标兵学生（TOP10，本科生最高荣誉）</li>
+                <li>2024年优秀毕业生</li>
+                <li>2021年、2022年 校长奖学金（TOP 5%），2023年 校友奖学金（TOP 10）</li>
+                <li>2021年、2023年 校级优秀学生干部，2022年校级优秀学生</li>
+                <li>2023年数学与物理学院"数理先锋"年度人物（学院最高荣誉）</li>
+                <li>若干学科竞赛、创新创业竞赛、社会实践奖项。（大学期间获得各类奖项、奖学金、荣誉称号等共30余项）</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">技能&证书</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-name">编程与软件：</div>
+                    <div class="skill-details">Python(PyTorch/TensorFlow)，R，COMSOL，ImageJ，Latex (熟练), Matlab，SPSS (基础)</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-name">语言能力：</div>
+                    <div class="skill-details">通过大学英语四/六级（CET-4/6），雅思7分，具有良好的听说读写能力；普通话一级乙等</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-name">证书：</div>
+                    <div class="skill-details">(AI+RPA) 开发者中级工程师认证；腾讯未来产品经理创造营结课证书</div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>工作经历</h2>
-            <div class="experience-grid">
-                <div class="experience-item">
-                    <h3>国投证券股份有限公司</h3>
-                    <p class="experience-date">2024.07-今</p>
-                    <p class="experience-position">投资研究岗位</p>
-                    <ul>
-                        <li>完成对扬杰科技、东微半导、大族激光、莱特光电等电子器件产品供应商的业务梳理与中报点评</li>
-                        <li>搜集整理苹果生态相关行业、公司数据及动态信息，完成课题研究，撰写AI赋能下的苹果供应链行业深度报告</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>武汉麦思威科技有限公司</h3>
-                    <p class="experience-date">2023.06-2023.07</p>
-                    <p class="experience-position">硬件工程师岗位</p>
-                    <ul>
-                        <li>协助带教组装、调试光电实验仪器，并独立焊接、装配各类电子模块与产品</li>
-                        <li>学习并熟练使用 Altium Designer、Keil、Proteus等电子设计与仿真软件</li>
-                        <li>独立完成电路设计、仿真、编程、PCB打板、调试等流程，制作出组内完成度最高的智能温度检测电路系统</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="section">
+            <h2 class="section-title">其他</h2>
+            <ul class="additional-info">
+                <li>拥有学生会主席等10余段学生工作与社会工作经历，共组织参与各类活动50余场，各类活动覆盖10000余人，新媒体阅读量已达到60万+。在身兼数职的过程中培养了极强的自我控制与稳定情绪能力，具有表达沟通和统筹能力，具备极强的责任心和抗压能力，能适应高强度与多任务工作。</li>
+                <li>具有出色的快速学习能力，包括但不限于软件操作与理论概念的学习。</li>
+                <li>参加奥运会、知识科普、疫情防控、国际教育、天文观测等多项志愿活动，参与志愿活动超200小时。</li>
+                <li>利用课余时间兼职家教，多年时间教学超百名学生，获得学生及家长的一致好评。注重知识共享，已经在网络上分享多个知识类视频，播放量已达7000余次。</li>
+                <li>个人事迹被各级媒体宣传报道40余篇。</li>
+                <li>爱好：摄影、游泳、旅游、高尔夫。</li>
+            </ul>
         </div>
-    </section>
+    </div>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>科研与项目</h2>
-            <div class="projects-grid">
-                <div class="project-item">
-                    <h3>上海交通大学李政道研究所冬令营学术训练项目</h3>
-                    <p class="project-title">《RV signal detection with Agatha》</p>
-                    <ul>
-                        <li>使用R语言编程处理系外行星的RV时间序列数据</li>
-                        <li>在短期内完成对陌生领域和工具的快速学习与掌握</li>
-                        <li>在物理科研中大量使用Python进行数学建模</li>
-                    </ul>
-                </div>
-                <div class="project-item">
-                    <h3>SCI Q2期刊发表</h3>
-                    <p class="project-title">《具有各向异性共振的超薄弹性超材料实现纵波和横波的全转换》</p>
-                    <p>同级本科生首篇SCI论文</p>
-                </div>
-                <div class="project-item">
-                    <h3>中国地质大学(武汉)教学实验室开放基金项目</h3>
-                    <p class="project-title">《同步再现虹与霓及其影响因素的探究》</p>
-                    <p>项目负责人</p>
-                </div>
-                <div class="project-item">
-                    <h3>国家级大学生创新创业训练项目</h3>
-                    <p class="project-title">《利用空气柱静态测量重力加速度》</p>
-                    <p>项目负责人</p>
-                </div>
-                <div class="project-item">
-                    <h3>第八届中国国际"互联网+"大学生创新创业大赛</h3>
-                    <p class="project-title">《仪来仪往——科学实验仪器共享平台》</p>
-                    <p>负责项目财务分析</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        let isEnglish = true;
 
-    <section id="awards" class="section">
-        <div class="container">
-            <h2>荣誉与奖项</h2>
-            <div class="awards-grid">
-                <div class="award-item">
-                    <h3>学术荣誉</h3>
-                    <ul>
-                        <li>2024年中国地质大学十大标兵学生(本科生最高荣誉)</li>
-                        <li>2024年优秀毕业生</li>
-                        <li>2021年、2022年校长奖学金(TOP5%)</li>
-                        <li>2023年校友奖学金(TOP10)</li>
-                        <li>2023年数学与物理学院"数理先锋"年度人物(学院最高荣誉)</li>
-                    </ul>
-                </div>
-                <div class="award-item">
-                    <h3>领导力与服务</h3>
-                    <ul>
-                        <li>2021年、2023年校级优秀学生干部</li>
-                        <li>2022年校级优秀学生</li>
-                        <li>市优秀城市志愿者</li>
-                        <li>省"冀青之星"青春冬奥特别奖</li>
-                    </ul>
-                </div>
-                <div class="award-item">
-                    <h3>技能认证</h3>
-                    <ul>
-                        <li>大学英语四/六级(CET-4/6)</li>
-                        <li>雅思7分</li>
-                        <li>普通话一级乙等</li>
-                        <li>(AI+RPA)开发者初级、中级工程师认证</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        function toggleLanguage() {
+            const englishContent = document.getElementById('english-content');
+            const chineseContent = document.getElementById('chinese-content');
+            // const toggleText = document.getElementById('toggle-text'); // This line can be removed or commented out as it's no longer used for text content
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>联系我</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> 您的邮箱</p>
-                    <p><i class="fas fa-phone"></i> 您的电话</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 深圳/香港</p>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-weixin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+            if (isEnglish) {
+                englishContent.classList.add('hidden');
+                chineseContent.classList.remove('hidden');
+                // toggleText.textContent = 'English'; // Remove or comment out this line
+                document.documentElement.lang = 'zh';
+                isEnglish = false;
+                localStorage.setItem('language', 'chinese');
+            } else {
+                chineseContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                // toggleText.textContent = '中文'; // Remove or comment out this line
+                document.documentElement.lang = 'en';
+                isEnglish = true;
+                localStorage.setItem('language', 'english');
+            }
+        }
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 您的名字. 保留所有权利.</p>
-        </div>
-    </footer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('language');
+            const englishContent = document.getElementById('english-content');
+            const chineseContent = document.getElementById('chinese-content');
+            // const toggleText = document.getElementById('toggle-text'); // This line can be removed or commented out
 
-    <script src="js/script.js"></script>
+            if (savedLanguage === 'chinese') {
+                englishContent.classList.add('hidden');
+                chineseContent.classList.remove('hidden');
+                // toggleText.textContent = 'English'; // Remove or comment out this line
+                document.documentElement.lang = 'zh';
+                isEnglish = false;
+            } else {
+                chineseContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                // toggleText.textContent = '中文'; // Remove or comment out this line
+                document.documentElement.lang = 'en';
+                isEnglish = true;
+            }
+        });
+    </script>
 </body>
 </html>
