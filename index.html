@@ -600,50 +600,61 @@
             </ul>
         </div>
     </div>
-
     <script>
-        let isEnglish = true;
-
+        let isEnglish; // 这将根据浏览器或 localStorage 设置
+    
         function toggleLanguage() {
             const englishContent = document.getElementById('english-content');
             const chineseContent = document.getElementById('chinese-content');
-            // const toggleText = document.getElementById('toggle-text'); // This line can be removed or commented out as it's no longer used for text content
-
+    
             if (isEnglish) {
                 englishContent.classList.add('hidden');
                 chineseContent.classList.remove('hidden');
-                // toggleText.textContent = 'English'; // Remove or comment out this line
                 document.documentElement.lang = 'zh';
                 isEnglish = false;
                 localStorage.setItem('language', 'chinese');
             } else {
                 chineseContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
-                // toggleText.textContent = '中文'; // Remove or comment out this line
                 document.documentElement.lang = 'en';
                 isEnglish = true;
                 localStorage.setItem('language', 'english');
             }
         }
-
+    
         document.addEventListener('DOMContentLoaded', () => {
             const savedLanguage = localStorage.getItem('language');
             const englishContent = document.getElementById('english-content');
             const chineseContent = document.getElementById('chinese-content');
-            // const toggleText = document.getElementById('toggle-text'); // This line can be removed or commented out
-
-            if (savedLanguage === 'chinese') {
-                englishContent.classList.add('hidden');
-                chineseContent.classList.remove('hidden');
-                // toggleText.textContent = 'English'; // Remove or comment out this line
-                document.documentElement.lang = 'zh';
-                isEnglish = false;
+    
+            if (savedLanguage) {
+                // 如果保存了语言偏好，则使用它
+                if (savedLanguage === 'chinese') {
+                    englishContent.classList.add('hidden');
+                    chineseContent.classList.remove('hidden');
+                    document.documentElement.lang = 'zh';
+                    isEnglish = false;
+                } else {
+                    chineseContent.classList.add('hidden');
+                    englishContent.classList.remove('hidden');
+                    document.documentElement.lang = 'en';
+                    isEnglish = true;
+                }
             } else {
-                chineseContent.classList.add('hidden');
-                englishContent.classList.remove('hidden');
-                // toggleText.textContent = '中文'; // Remove or comment out this line
-                document.documentElement.lang = 'en';
-                isEnglish = true;
+                // 如果没有保存语言偏好，则检测浏览器语言
+                const browserLanguage = navigator.language || navigator.userLanguage; // navigator.userLanguage 用于旧版浏览器
+                if (browserLanguage.startsWith('zh')) { // 检查浏览器语言是否以 'zh' 开头表示中文
+                    englishContent.classList.add('hidden');
+                    chineseContent.classList.remove('hidden');
+                    document.documentElement.lang = 'zh';
+                    isEnglish = false;
+                } else {
+                    // 对于其他语言或检测失败时，默认显示英文
+                    chineseContent.classList.add('hidden');
+                    englishContent.classList.remove('hidden');
+                    document.documentElement.lang = 'en';
+                    isEnglish = true;
+                }
             }
         });
     </script>
