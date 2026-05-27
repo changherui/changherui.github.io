@@ -3,659 +3,1159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Herui Chang's bilingual technical resume, focused on AI agent systems, financial research, RAG, and fact-checking.">
     <title>Herui (Henry) CHANG | 常贺瑞</title>
     <style>
+        :root {
+            --paper: #ffffff;
+            --surface: #f6f8f9;
+            --ink: #1d252c;
+            --muted: #5d6b75;
+            --soft: #8a98a3;
+            --line: #dce4e8;
+            --line-strong: #bccbd2;
+            --accent: #0f766e;
+            --accent-dark: #0d4f4a;
+            --accent-soft: #e0f2ef;
+            --amber: #b7791f;
+            --shadow: 0 18px 45px rgba(25, 42, 54, 0.08);
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-            max-width: 900px;
+            min-height: 100vh;
+            background:
+                linear-gradient(180deg, rgba(15, 118, 110, 0.08), rgba(15, 118, 110, 0) 360px),
+                var(--surface);
+            color: var(--ink);
+            font-family: Aptos, "Segoe UI", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.68;
+        }
+
+        a {
+            color: inherit;
+            text-decoration-color: rgba(15, 118, 110, 0.35);
+            text-underline-offset: 4px;
+        }
+
+        a:hover {
+            color: var(--accent-dark);
+            text-decoration-color: var(--accent-dark);
+        }
+
+        .page {
+            max-width: 1160px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 34px 24px 64px;
         }
 
         .header {
-            border-bottom: 1px solid #e5e5e5;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 34px;
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-top: 5px solid var(--accent);
+            border-radius: 8px;
+            background: var(--paper);
+            box-shadow: var(--shadow);
         }
 
-        .title {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #1a1a1a;
+        .header::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 38%;
+            height: 100%;
+            content: "";
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(15, 118, 110, 0.045)),
+                repeating-linear-gradient(135deg, rgba(15, 118, 110, 0.08) 0 1px, transparent 1px 12px);
+            pointer-events: none;
+        }
+
+        .topbar,
+        .hero-grid,
+        .contact {
+            position: relative;
+            z-index: 1;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .kicker {
+            color: var(--accent-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .language-toggle {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            padding: 8px 16px;
+            min-width: 96px;
+            padding: 8px 14px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            background: #fff;
+            color: var(--ink);
             cursor: pointer;
-            font-size: 14px;
-            color: #495057;
-            transition: background-color 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: 650;
+            transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
         }
 
         .language-toggle:hover {
-            background: #e9ecef;
+            border-color: var(--accent);
+            color: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.42fr) minmax(280px, 0.58fr);
+            gap: 34px;
+            align-items: end;
+        }
+
+        .title {
+            max-width: 760px;
+            color: var(--ink);
+            font-family: Cambria, Georgia, "Noto Serif SC", serif;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.08;
+        }
+
+        .title span {
+            color: var(--muted);
+            font-size: 0.62em;
+            font-weight: 500;
+        }
+
+        .role {
+            margin-top: 16px;
+            color: var(--accent-dark);
+            font-size: 1.02rem;
+            font-weight: 700;
+        }
+
+        .summary {
+            max-width: 760px;
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .metric {
+            min-height: 88px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(246, 248, 249, 0.9);
+        }
+
+        .metric-value {
+            display: block;
+            color: var(--ink);
+            font-size: 1.35rem;
+            font-weight: 760;
+            line-height: 1.2;
+        }
+
+        .metric-label {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin-top: 26px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item::before {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            content: "";
+        }
+
+        .content-shell {
+            display: grid;
+            grid-template-columns: 178px minmax(0, 1fr);
+            gap: 36px;
+            align-items: start;
+        }
+
+        .section-rail {
+            position: sticky;
+            top: 24px;
+            padding-top: 4px;
+        }
+
+        .section-rail-title {
+            margin-bottom: 12px;
+            color: var(--soft);
+            font-size: 0.72rem;
+            font-weight: 760;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .section-nav {
+            display: grid;
+            gap: 8px;
+        }
+
+        .section-nav button {
+            padding: 8px 10px;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.9rem;
+            text-align: left;
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .section-nav button:hover {
+            border-color: var(--line);
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--accent-dark);
+        }
+
+        .content-panel {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.82);
+        }
+
+        main {
+            padding: 8px 32px 20px;
         }
 
         .section {
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: minmax(146px, 0.24fr) minmax(0, 0.76fr);
+            gap: 26px;
+            padding: 34px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section:last-child {
+            border-bottom: 0;
         }
 
         .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ecf0f1;
-            padding-bottom: 8px;
+            position: sticky;
+            top: 24px;
+            grid-column: 1;
+            grid-row: 1;
+            align-self: start;
+            color: var(--ink);
+            font-size: 0.92rem;
+            font-weight: 780;
+            letter-spacing: 0.06em;
+            line-height: 1.35;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            display: block;
+            width: 34px;
+            height: 2px;
+            margin-top: 12px;
+            background: var(--accent);
+            content: "";
+        }
+
+        .section > :not(.section-title) {
+            grid-column: 2;
         }
 
         .subsection {
-            margin-bottom: 25px;
+            position: relative;
+            margin-bottom: 26px;
+            padding-left: 18px;
+            border-left: 2px solid var(--line);
         }
-        .subsection-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #34495e;
-            margin-bottom: 8px;
-            display: flex; /* 添加 flex 布局 */
-            justify-content: space-between; /* 子元素两端对齐 */
-            align-items: baseline; /* 保持标题基线对齐 */
+
+        .subsection:last-child {
+            margin-bottom: 0;
+        }
+
+        .subsection::before {
+            position: absolute;
+            top: 0.44em;
+            left: -5px;
+            width: 8px;
+            height: 8px;
+            border: 2px solid var(--paper);
+            border-radius: 50%;
+            background: var(--accent);
+            content: "";
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+
+        .subsection-title,
+        .project-title {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 6px;
+            color: var(--ink);
+            font-size: 1.08rem;
+            font-weight: 760;
+            line-height: 1.35;
         }
 
         .institution {
-            font-weight: 500;
-            color: #2c3e50;
             margin-bottom: 4px;
+            color: var(--ink);
+            font-weight: 720;
         }
 
-        .degree {
-            color: #5a6c7d;
-            margin-bottom: 4px;
+        .degree,
+        .position,
+        .description,
+        li {
+            color: var(--muted);
         }
 
-        .date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .company {
-            font-weight: 500;
-            color: #2c3e50;
+        .degree,
+        .position {
             margin-bottom: 4px;
         }
 
         .position {
-            color: #5a6c7d;
-            margin-bottom: 4px;
+            color: var(--accent-dark);
+            font-weight: 650;
+        }
+
+        .date,
+        .right-aligned-date {
+            color: var(--soft);
+            font-size: 0.88rem;
+            font-weight: 650;
+        }
+
+        .date {
+            margin-bottom: 8px;
+        }
+
+        .right-aligned-date {
+            flex: 0 0 auto;
+            white-space: nowrap;
         }
 
         .description {
-            color: #7f8c8d;
-            font-size: 0.9rem;
             margin-bottom: 8px;
+            font-size: 0.92rem;
             font-style: italic;
         }
 
-        .project-title {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            display: flex; /* 添加 flex 布局 */
-            justify-content: space-between; /* 子元素两端对齐 */
-            align-items: baseline; /* 保持标题基线对齐 */
-        }
-        /* 添加一个新的类来控制时间靠右 */
-        .right-aligned-date {
-            font-size: 0.9rem; /* 可以调整字体大小以匹配您的设计 */
-            color: #7f8c8d; /* 可以调整颜色 */
-            white-space: nowrap; /* 防止时间换行 */
-            margin-left: 15px; /* 与标题保持一定间距 */
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .subsection-title, .project-title {
-                flex-direction: column; /* 小屏幕下堆叠显示 */
-                align-items: flex-start; /* 左对齐 */
-            }
-            .right-aligned-date {
-                margin-left: 0; /* 小屏幕下取消左边距 */
-                margin-top: 5px; /* 在标题下方添加上边距 */
-            }
-        }
         ul {
-            margin-left: 20px;
+            margin-left: 18px;
             margin-bottom: 12px;
         }
 
         li {
-            margin-bottom: 6px;
-            color: #5a6c7d;
+            margin-bottom: 8px;
+            padding-left: 2px;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        em {
+            color: var(--ink);
+            font-style: italic;
+        }
+
+        strong {
+            color: var(--ink);
+            font-weight: 760;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
         }
 
         .skill-category {
-            margin-bottom: 12px;
+            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(246, 248, 249, 0.72);
         }
 
         .skill-name {
-            font-weight: 500;
-            color: #2c3e50;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            color: var(--ink);
+            font-weight: 760;
         }
 
         .skill-details {
-            color: #5a6c7d;
-            font-size: 0.9rem;
-        }
-
-        .awards-list {
-            margin-left: 0;
-            list-style: none;
-        }
-
-        .awards-list li {
-            margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .awards-list li:before {
-            content: "•";
-            color: #95a5a6;
-            position: absolute;
-            left: 0;
-        }
-
-        .additional-info {
-            margin-left: 0;
-            list-style: none;
-        }
-
-        .additional-info li {
-            margin-bottom: 15px;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .additional-info li:before {
-            content: "•";
-            color: #95a5a6;
-            position: absolute;
-            left: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
         }
 
         .hidden {
-            display: none;
+            display: none !important;
+        }
+
+        @media (max-width: 980px) {
+            .page {
+                padding: 20px 16px 48px;
+            }
+
+            .hero-grid,
+            .content-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .section-rail {
+                position: static;
+                padding: 12px 0 0;
+            }
+
+            .section-nav {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .section-nav button {
+                text-align: center;
+            }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
+            .header {
+                padding: 24px 20px;
+            }
+
+            .header::after {
+                width: 100%;
+                opacity: 0.45;
+            }
+
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 22px;
             }
 
             .title {
-                font-size: 2rem;
-                margin-bottom: 15px;
+                font-size: 2.22rem;
             }
 
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
+            .metric-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-panel {
+                border-radius: 8px;
+            }
+
+            main {
+                padding: 0 20px;
+            }
+
+            .section {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 30px 0;
+            }
+
+            .section > :not(.section-title) {
+                grid-column: 1;
             }
 
             .section-title {
-                font-size: 1.2rem;
+                position: static;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .subsection-title,
+            .project-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+
+            .right-aligned-date {
+                white-space: normal;
+            }
+
+            .section-nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .page {
+                max-width: none;
+                padding: 0;
+            }
+
+            .header,
+            .content-panel {
+                border: 0;
+                box-shadow: none;
+            }
+
+            .section-rail,
+            .language-toggle {
+                display: none;
+            }
+
+            .content-shell,
+            .section {
+                display: block;
+            }
+
+            .section-title {
+                position: static;
+                margin-bottom: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="title">Herui (Henry) CHANG | 常贺瑞</h1>
-        <button class="language-toggle" onclick="toggleLanguage()">
-            <span id="toggle-text">EN/中文</span>
-        </button>
-    </div>
-    </div> <div style="font-size: 1rem; color: #5a6c7d; margin-bottom: 20px;">E-mail: heruichang@link.cuhk.edu.cn</div>
-    <!-- English Content -->
-    <div id="english-content">
-        <div class="section">
+    <div class="page">
+        <header class="header">
+            <div class="topbar">
+                <div class="kicker">
+                    <span class="english-only">Technical Resume / AI x Finance</span>
+                    <span class="chinese-only hidden">技术简历 / AI x 金融</span>
+                </div>
+                <button class="language-toggle" type="button" onclick="toggleLanguage()">
+                    <span id="toggle-text">中文</span>
+                </button>
+            </div>
+
+            <div class="hero-grid">
+                <div>
+                    <h1 class="title">Herui (Henry) CHANG <span>| 常贺瑞</span></h1>
+                    <div class="role">
+                        <span class="english-only">AI Agent Systems · Financial Research · Fact-Checking</span>
+                        <span class="chinese-only hidden">AI Agent 系统 · 金融投研 · 事实核查</span>
+                    </div>
+                    <p class="summary english-only">
+                        M.Sc. candidate in Artificial Intelligence and Robotics at CUHK-Shenzhen, focused on reliable long-horizon agent systems for financial research, traceable RAG, and benchmark-driven agent improvement.
+                    </p>
+                    <p class="summary chinese-only hidden">
+                        香港中文大学（深圳）人工智能与机器人硕士在读，关注金融投研场景下可靠长链路 Agent、可追溯 RAG 与评测驱动的 Agent 能力迭代。
+                    </p>
+                </div>
+
+                <div class="metric-grid" aria-label="Selected highlights">
+                    <div class="metric">
+                        <span class="metric-value">21 / 9 / 10</span>
+                        <span class="metric-label english-only">skills, agents, and workflows packaged for a finance research workbench</span>
+                        <span class="metric-label chinese-only hidden">金融投研工作台封装的 skill / agent / workflow</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">20K+</span>
+                        <span class="metric-label english-only">Neo4j nodes in the financial knowledge foundation</span>
+                        <span class="metric-label chinese-only hidden">金融知识底座 Neo4j 节点</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">84.65%</span>
+                        <span class="metric-label english-only">ECHO-Bench fact-checking accuracy</span>
+                        <span class="metric-label chinese-only hidden">ECHO-Bench 事实核查准确率</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">30+</span>
+                        <span class="metric-label english-only">awards, scholarships, and honors</span>
+                        <span class="metric-label chinese-only hidden">奖项、奖学金与荣誉称号</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact">
+                <span class="contact-item"><a href="mailto:heruichang@link.cuhk.edu.cn">heruichang@link.cuhk.edu.cn</a></span>
+                <span class="contact-item"><a href="https://changherui.github.io/">changherui.github.io</a></span>
+                <span class="contact-item english-only">Shenzhen, China</span>
+                <span class="contact-item chinese-only hidden">中国深圳</span>
+            </div>
+        </header>
+
+        <div class="content-shell">
+            <aside class="section-rail" aria-label="Page navigation">
+                <div class="section-rail-title">
+                    <span class="english-only">Sections</span>
+                    <span class="chinese-only hidden">目录</span>
+                </div>
+                <nav class="section-nav">
+                    <button type="button" onclick="scrollToSection(0)">
+                        <span class="english-only">Education</span>
+                        <span class="chinese-only hidden">教育</span>
+                    </button>
+                    <button type="button" onclick="scrollToSection(1)">
+                        <span class="english-only">Experience</span>
+                        <span class="chinese-only hidden">经历</span>
+                    </button>
+                    <button type="button" onclick="scrollToSection(2)">
+                        <span class="english-only">Projects</span>
+                        <span class="chinese-only hidden">项目</span>
+                    </button>
+                    <button type="button" onclick="scrollToSection(3)">
+                        <span class="english-only">Publication</span>
+                        <span class="chinese-only hidden">发表</span>
+                    </button>
+                    <button type="button" onclick="scrollToSection(4)">
+                        <span class="english-only">Awards</span>
+                        <span class="chinese-only hidden">荣誉</span>
+                    </button>
+                    <button type="button" onclick="scrollToSection(5)">
+                        <span class="english-only">Skills</span>
+                        <span class="chinese-only hidden">技能</span>
+                    </button>
+                    <button type="button" onclick="scrollToSection(6)">
+                        <span class="english-only">Other</span>
+                        <span class="chinese-only hidden">其他</span>
+                    </button>
+                </nav>
+            </aside>
+
+            <div class="content-panel">
+    <main id="english-content">
+        <section class="section">
             <h2 class="section-title">Education</h2>
-            
+
             <div class="subsection">
-                <div class="institution">The Chinese University of Hong Kong, Shenzhen</div>
-                <div class="degree">M.Sc. in Artificial Intelligence and Robotics, School of Data Science</div>
-                <div class="date">Aug 2024--Present  Expected Jun. 2026</div>
+                <div class="institution">The Chinese University of Hong Kong, Shenzhen | Shenzhen, China</div>
+                <div class="degree">M.Sc. candidate in Artificial Intelligence and Robotics, School of Data Science (GPA: 3.83)</div>
+                <div class="date">Aug 2024 - Present | Expected Jul 2027</div>
+                <ul>
+                    <li>Postgraduate Admission Scholarship.</li>
+                </ul>
             </div>
 
             <div class="subsection">
-                <div class="institution">China University of Geosciences, Wuhan</div>
-                <div class="degree">B.Sc. in Physics (GPA: 88.33) & Minor in Economics (GPA: 89.23), School of Mathematics and Physics</div>
-                <div class="date">Sep 2020--Jun 2024</div>
+                <div class="institution">China University of Geosciences (Wuhan) | Wuhan, China</div>
+                <div class="degree">B.Sc. in Physics (GPA: 88.33) with Minor in Economics (GPA: 89.23), School of Mathematics and Physics</div>
+                <div class="date">Sep 2020 - Jun 2024</div>
+                <ul>
+                    <li>Top 10 Model Student of China University of Geosciences (Wuhan), the highest undergraduate honor; accumulated more than 30 awards, scholarships, and honors.</li>
+                    <li>Academic publication: <em>Applied Physics Express</em> (Q2) 15 117001, DOI: 10.35848/1882-0786/ac9953.</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">Internship</h2>
-            
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+
             <div class="subsection">
                 <div class="subsection-title">
-                    <span>SDIC SECURITIES CO., LTD. Beijing, China</span>
-                    <span class="right-aligned-date">Summer, 2024</span>
+                    <span>Leading Domestic Private Fund (RMB 10B+ AUM)</span>
+                    <span class="right-aligned-date">Mar 2026 - Present</span>
                 </div>
-                <div class="position">Investment Research Intern</div>
-                <div class="description">A fully licensed comprehensive securities firm established in 2006, with multiple business rankings ranking among the top in the country.</div>
-                <div class="description">Investment Research Intern, Electronic Industry Research Team. Conducted research in the electronics industry, authored various reports, compiled industry and company data, and utilized financial models.</div>
+                <div class="position">Financial LLM Agent Algorithm Intern</div>
                 <ul>
-                    <li>Collected data and news on industries and companies within the Apple ecosystem to complete research and author in-depth report on the Apple supply chain industry empowered by Apple Intelligence.</li>
-                    <li>Conducted business reviews and assessments for electronic component suppliers including Yangjie Technology, Oriental Semi and Light Electronics.</li>
+                    <li>Contributed to a production-grade multi-agent investment research system for private-fund workflows, covering long-horizon tasks such as research report understanding, target-company analysis, portfolio tracking, and fact checking. The workbench packages 21 skills, 9 agents, and 10 workflows, has been delivered to dozens of seed users, outperforms general Deep Research products and comparable domestic finance agents in core research evaluations and user feedback, and is expected to reach more than 100 users within the year.</li>
+                    <li>Designed long-chain execution workflows and tool-use mechanisms for investment research agents: memory retrieval, graph verification, real-time data completion, reasoning generation, and review/write-back. Used a Coordinator to plan multi-target and multi-theme tasks, route tools, generate parameters, and inject context, with fallback chains, rewrite retries, and exception recovery to improve long-chain task stability.</li>
+                    <li>Built the FundaCore financial knowledge foundation for structured parsing of multi-source financial data such as research reports and tables, preserving chapter/table structure and chunk-level evidence provenance before writing to databases and knowledge graphs. The system has accumulated 20K Neo4j nodes, 161K relationships, 75K SQLite facts, and 234K evidence records, supporting traceable RAG and financial fact verification through hybrid retrieval, reranking, and deduplication.</li>
+                    <li>Designed a dual-store architecture and multi-user isolation mechanism for investment research memory: a shared industry fact base for common facts and evidence, plus independent personalized memory stores for user views and preferences. Supported hot/cold memory tiering, time decay, event/ingest_time bitemporality, userId-level database isolation, read-only shared stores, write-path validation, and audit controls to reduce cross-user memory contamination risk.</li>
+                    <li>Built an Agent Harness and benchmark-driven data flywheel that parses historical session traces into workflow, tool pairing, subagent link, latency, and failure-taxonomy metrics. Productized the ECHO self-evolution project into a review-check quality gate, forming a non-parametric Agentic Learning loop of evaluation, failure attribution, new-test generation, reevaluation, and iteration on prompts, tool routing, and memory strategies.</li>
                 </ul>
             </div>
 
             <div class="subsection">
                 <div class="subsection-title">
-                    <span>MESWAY TECHNOLOGY CO. LTD. Wuhan, China</span>
-                    <span class="right-aligned-date">Summer, 2023</span>
+                    <span>SDIC Securities Co., Ltd. | Beijing, China</span>
+                    <span class="right-aligned-date">Summer 2024</span>
                 </div>
-                <div class="position">Hardware Engineer Intern</div>
-                <div class="description">A high-tech enterprise established in 2013 engaged in research, design, and technical services of optoelectronic equipment.</div>
-                <div class="description">Hardware Engineer Intern, R&D Center. Assembled and calibrated optoelectronic experimental instruments, Independently managed entire process of circuit design, simulation, programming, PCB fabrication, and debugging.</div>
+                <div class="position">Investment Research Intern, Electronic Industry Research Team</div>
+                <div class="description">A fully licensed comprehensive securities firm established in 2006, with multiple business lines ranked among the top in China.</div>
                 <ul>
-                    <li>Directed all interns, handled communications and coordination with businesses, and was ultimately recognized as an Outstanding Intern.</li>
-                    <li>Developed an embedded real-time temperature monitoring and alarm system using C language, integrating DS18B20 and MLX90614 sensors to achieve precise temperature measurement, real-time display, and an adjustable over-temperature alarm function.</li>
+                    <li>Collected industry, company, and news data across the Apple ecosystem to complete topic research and draft an in-depth report on the Apple supply chain empowered by Apple Intelligence.</li>
+                    <li>Reviewed businesses and interim results for electronic component suppliers including Yangjie Technology, Oriental Semi, Han's Laser, and Wright Optoelectronics.</li>
                 </ul>
             </div>
-        </div>
 
-        <div class="section">
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span>Mesway Technology Co., Ltd. | Wuhan, China</span>
+                    <span class="right-aligned-date">Summer 2023</span>
+                </div>
+                <div class="position">Hardware Engineer Intern, R&amp;D Center</div>
+                <div class="description">A high-tech enterprise engaged in research, design, and technical services for optoelectronic equipment.</div>
+                <ul>
+                    <li>Assisted the mentor team in assembling and calibrating optoelectronic experimental instruments, soldered and assembled electronic modules and products, and independently completed circuit design, simulation, programming, PCB fabrication, and debugging.</li>
+                    <li>Developed an embedded real-time temperature monitoring and alarm system in C, integrating DS18B20 and MLX90614 sensors for precise temperature measurement, real-time display, and adjustable over-temperature alerts.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
             <h2 class="section-title">Projects</h2>
-            
+
             <div class="subsection">
-              	<div class="project-title">
-                    <span>Qwen2.5 Legal LLM Fine-tuning with LoRA</span>
-                    <span class="right-aligned-date">Summer, 2025</span>
+                <div class="project-title">
+                    <span>ECHO: Agent Fact-Checking System Based on Self-Evolving Credibility Handbooks</span>
+                    <span class="right-aligned-date">2025 - 2026</span>
                 </div>
+                <div class="description">Submitted to EMNLP.</div>
                 <ul>
-                    <li>Fine-tuned Qwen2.5 Large Language Models on the DISC-Law-SFT Chinese legal dataset, enhancing domain-specific knowledge and text generation capabilities while optimizing resource utilization.</li>
-                    <li>Engineered an efficient fine-tuning pipeline by integrating 4-bit quantization and LoRA, reducing trainable parameters and overcoming computational constraints.</li>
-                    <li>Adapted LLMs to the legal domain, generating contextually relevant answers as validated by qualitative evaluations and consistently decreasing training loss.</li>
+                    <li>Built model and tool orchestration with LangChain and developed an in-house Generator-Reflector-Curator multi-stage agent workflow: the Generator decomposes claims, retrieves evidence, and produces verdicts; the Reflector diagnoses execution traces with Reflexion; and the Curator converts diagnoses into reusable rule updates, extending the system from single-shot reasoning to a fact-checking agent that accumulates experience.</li>
+                    <li>Designed an externalized rule handbook and a Detection / Trust dual-memory mechanism to mitigate over-skepticism and rule drift in agents. Implemented progressive context disclosure, reading rule summaries during planning and loading full rules only when needed at verdict time, maintaining 94% rule consistency while reducing peak token consumption by 95%.</li>
+                    <li>Built ECHO-Bench and the evaluation pipeline. The system achieves state-of-the-art results on two fact-checking benchmarks, 84.65% on ECHO-Bench and 87.05% on AVeriTeC, outperforming the strongest agent baselines by 13.15pp and 6.49pp respectively, and improving human-assisted fact-checking accuracy by 13.6pp over the unaided setting.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>Chinese-to-English NMT using Seq2Seq Attention and MinGPT</span>
-                    <span class="right-aligned-date">Summer, 2025</span>
+                <div class="project-title">
+                    <span>Qwen2.5 Legal-Domain LLM Fine-Tuning with LoRA</span>
+                    <span class="right-aligned-date">Summer 2025</span>
                 </div>
                 <ul>
-                    <li>Developed and evaluated two Neural Machine Translation systems for Chinese-to-English translation: Bahdanau attention-based Seq2Seq model and a fine-tuned MinGPT Transformer, trained on approximately 30,000 sentence pairs.</li>
-                    <li>Engineered the Seq2Seq model with a Bidirectional GRU encoder and attention mechanism, and adapted the MinGPT model by concatenating Chinese and English sequences for autoregressive prediction.</li>
-                    <li>Implemented comprehensive data preprocessing and successfully trained both models, achieving reasonable translation quality.</li>
+                    <li>Fine-tuned Qwen2.5 large language models on the DISC-Law-SFT Chinese legal dataset, enhancing domain-specific knowledge and text generation capabilities while optimizing resource utilization.</li>
+                    <li>Built an efficient fine-tuning pipeline by combining 4-bit quantization, parameter-efficient fine-tuning, and LoRA, significantly reducing trainable parameters and overcoming compute constraints.</li>
+                    <li>Adapted the LLM to the legal domain, enabling contextually relevant legal answers and validating effectiveness through qualitative evaluation and training-loss curves.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>PyTorch & Native Implementation for Image Classification Networks</span>
-                    <span class="right-aligned-date">Spring, 2025</span>
+                <div class="project-title">
+                    <span>Chinese-to-English Neural Machine Translation with Seq2Seq Attention and MinGPT</span>
+                    <span class="right-aligned-date">Summer 2025</span>
                 </div>
                 <ul>
-                    <li>Designed and optimized deep neural networks for image classification on CIFAR-10 and MNIST datasets, encompassing both iteratively enhanced PyTorch-based architecture and NumPy implementation of core components.</li>
-                    <li>Implemented techniques including ResNet transfer learning, AdamW with cosine annealing, strategic Dropout, and data augmentation, significantly boosting model performance, achieving 94.3% accuracy on CIFAR-10 and 99.56% on MNIST.</li>
-                    <li>Manually implemented neural network core components such as activation functions, convolutional layers, and optimizers using NumPy, achieving 97.29% accuracy on the dataset.</li>
+                    <li>Developed and compared two neural machine translation systems for Chinese-to-English translation: a Bahdanau attention-based Seq2Seq model and a fine-tuned MinGPT Transformer.</li>
+                    <li>Trained on approximately 30,000 sentence pairs with comprehensive preprocessing, including BERT tokenization for both Chinese and English, and successfully produced reasonable translation quality from both models.</li>
+                    <li>Designed a Seq2Seq model with a bidirectional GRU encoder and attention mechanism, and adapted MinGPT by concatenating Chinese and English sequences for autoregressive prediction.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
+                <div class="project-title">
+                    <span>Image Classification Network Optimization with PyTorch and Native Implementation</span>
+                    <span class="right-aligned-date">Spring 2025</span>
+                </div>
+                <ul>
+                    <li>Designed and optimized deep neural networks for CIFAR-10 and MNIST, covering iteratively improved PyTorch residual architectures and NumPy implementations of core neural-network components from scratch.</li>
+                    <li>Applied deep-learning techniques including ResNet transfer learning, AdamW with cosine annealing, dropout, and data augmentation, improving test accuracy to 94.3% on CIFAR-10 and 99.56% on MNIST.</li>
+                    <li>Manually implemented activation functions, convolutional layers, optimizers, and other neural-network components in NumPy, achieving 97.29% accuracy and deepening understanding of network internals.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="project-title">
                     <span>Impact of Complex Poisson Ratio on Sound Transmission Dissipation</span>
-                    <span class="right-aligned-date">2023-2024</span>
+                    <span class="right-aligned-date">2023 - 2024</span>
                 </div>
                 <ul>
-                    <li>Utilized theoretical models and simulation (COMSOL Multiphysics) to derive the Poisson loss factor and its influence on elastic wave absorption rates.</li>
-                    <li>Designed artificial metamaterials with a transverse wave absorption rate of 99.84% at a resonance frequency of 82.1705 Hz, while attaining only 0.286% for longitudinal waves, highlighting absorption differentiation.</li>
-                    <li>Developed a methodology for calculating equivalent shear and bulk moduli, enhancing understanding of energy dissipation in viscoelastic materials.</li>
+                    <li>Used theoretical modeling and simulation to derive the Poisson loss factor and analyze its influence on absorption rate.</li>
+                    <li>Designed an artificial metamaterial with a transverse-wave absorption rate of 99.84% at a resonance frequency of 82.1705 Hz, while the longitudinal-wave absorption rate was only 0.286%, demonstrating significant absorption selectivity.</li>
+                    <li>Developed a calculation method for equivalent shear and bulk moduli, deepening understanding of the energy dissipation mechanism.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
+                <div class="project-title">
                     <span>Meta-Analysis of the Effects of Virtual Immersion in Green Nature on Affect</span>
-                    <span class="right-aligned-date">Summer, 2023</span>
+                    <span class="right-aligned-date">Summer 2023</span>
                 </div>
                 <ul>
-                    <li>Analyzed data using RevMan software, synthesizing results from 13 quantitative studies (n=1917), achieving a standardized mean difference (SMD) of 0.42 for positive affect and -0.39 for negative affect.</li>
-                    <li>Employed advanced statistical methods to generate and interpret forest plots and funnel plots, assessing potential publication bias and heterogeneity through results.</li>
+                    <li>Used RevMan to synthesize data from 13 quantitative studies (n=1917), obtaining a standardized mean difference of 0.42 for positive affect and -0.39 for negative affect.</li>
+                    <li>Generated and interpreted forest plots and funnel plots with advanced statistical methods to assess potential publication bias and research heterogeneity.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>RV Signal Detection with Bayesian Approach for Exoplanet Detection</span>
-                    <span class="right-aligned-date">Spring, 2023</span>
+                <div class="project-title">
+                    <span>Bayesian Radial-Velocity Signal Detection for Exoplanets</span>
+                    <span class="right-aligned-date">Spring 2023</span>
                 </div>
                 <ul>
-                    <li>Utilized the Agatha to analyze radial velocity (RV) data, integrating Bayesian periodogram techniques to detect periodic signals in time series data.</li>
-                    <li>Conducted data analysis on GJ551-ESPRESSO datasets for exoplanets, utilizing ARMA and MCMC models to get the orbital solutions and estimate parameters.</li>
+                    <li>Used Agatha to analyze radial-velocity data from the GJ551-ESPRESSO dataset and combined Bayesian periodogram methods to identify periodic signals in time series.</li>
+                    <li>Used ARMA and MCMC methods to obtain orbital solutions and estimate related parameters.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>Total Wave Conversion in Ultrathin Metamaterials with Anisotropic Resonance</span>
-                    <span class="right-aligned-date">2021-2022</span>
+                <div class="project-title">
+                    <span>Total P-Wave and S-Wave Conversion in Ultrathin Elastic Metamaterials with Anisotropic Resonance</span>
+                    <span class="right-aligned-date">2021 - 2022</span>
                 </div>
                 <ul>
-                    <li>Developed the ultrathin metamaterial plate composed of an array of anisotropic resonators obliquely-oriented, achieving over 95% conversion rate between P and S waves at wavelengths two orders of magnitude larger than its thickness.</li>
-                    <li>Designed and refined the theoretical framework for elastic wave mode conversion using a mass--spring model, realizing a quantitative agreement with simulation results through analytical calculations.</li>
-                    <li>Dominated theoretical derivation and partial simulation modeling as the second core contributor, achieving the first SCI publication in the same academic cohort.</li>
+                    <li>Designed an ultrathin metamaterial plate composed of obliquely arranged anisotropic resonators, achieving more than 95% conversion between P waves and S waves under incident wavelengths far larger than the plate thickness.</li>
+                    <li>Built and refined a theoretical framework for elastic-wave mode conversion based on a mass-spring model, achieving high consistency between analytical calculations and simulations.</li>
+                    <li>Led the theoretical derivation and part of the simulation work, becoming the first undergraduate in the cohort to publish an SCI paper.</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">Awards & Honors</h2>
-            <ul class="awards-list">
-                <li>2024 Chinese University of Hong Kong (Shenzhen) Postgraduate Admission Scholarship</li>
-                <li>2024 China University of Geosciences (Wuhan) Top 10 Model Students (Top 10, Highest undergraduate honor)</li>
-                <li>2024 Outstanding Graduate</li>
-                <li>2021, 2022 President's Scholarship (Top 5%), 2023 Alumni Scholarship (Top 10)</li>
-                <li>2021, 2023 University-level Outstanding Student Leader, 2022 University-level Outstanding Student</li>
-                <li>2023 "Pioneer of Mathematics and Physics" Person of the Year (Highest honor in the School)</li>
-                <li>Numerous awards in academic competitions, innovation competitions, and social practice. (Accumulated over 30 awards, scholarships, and honorary titles during university studies)</li>
+        <section class="section">
+            <h2 class="section-title">Publication</h2>
+            <ul>
+                <li>Total wave conversion in ultrathin elastic metamaterials with anisotropic resonance, <em>Applied Physics Express</em> (Q2) 15 117001, DOI: 10.35848/1882-0786/ac9953.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">Skills & Certificates</h2>
+        <section class="section">
+            <h2 class="section-title">Awards &amp; Honors</h2>
+            <ul>
+                <li>2024 Chinese University of Hong Kong, Shenzhen Postgraduate Admission Scholarship.</li>
+                <li>2024 China University of Geosciences (Wuhan) Top 10 Model Students, the highest undergraduate honor.</li>
+                <li>2024 Outstanding Graduate.</li>
+                <li>2021 and 2022 President's Scholarship (Top 5%); 2023 Alumni Scholarship (Top 10%).</li>
+                <li>2021 and 2023 University-level Outstanding Student Leader; 2022 University-level Outstanding Student.</li>
+                <li>2023 "Pioneer of Mathematics and Physics" Person of the Year, the highest honor in the School.</li>
+                <li>More than 30 awards, scholarships, and honors across academic competitions, innovation and entrepreneurship competitions, and social-practice activities.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Skills &amp; Certificates</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <div class="skill-name">Programming & Software:</div>
-                    <div class="skill-details">Python (PyTorch/TensorFlow), R, COMSOL, ImageJ, LaTeX (Proficient); Matlab, SPSS (Basic)</div>
+                    <div class="skill-name">AI, Data, and Agent Systems</div>
+                    <div class="skill-details">LLM agents, multi-agent workflows, RAG, tool use, LangChain, benchmark/evaluation pipelines, Neo4j, SQLite.</div>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-name">Languages:</div>
-                    <div class="skill-details">Passed College English Test Band 4/6 (CET-4/6), IELTS Score 7 (Proficient in listening, speaking, reading, and writing); Mandarin Chinese Level 1-B</div>
+                    <div class="skill-name">Programming and Software</div>
+                    <div class="skill-details">Python (PyTorch/TensorFlow), R, COMSOL, ImageJ, LaTeX (proficient); Matlab and SPSS (basic).</div>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-name">Certifications:</div>
-                    <div class="skill-details">(AI+RPA) Developer Intermediate Engineer Certification; Tencent Future Product Manager Creation Camp Completion Certificate</div>
+                    <div class="skill-name">Languages</div>
+                    <div class="skill-details">CET-4/6, IELTS 7.0, strong English reading, writing, listening, and speaking ability; Mandarin Level 1-B.</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-name">Certificates</div>
+                    <div class="skill-details">(AI+RPA) Developer Intermediate Engineer Certification; Tencent Future Product Manager Creation Camp completion certificate.</div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Additional Information</h2>
-            <ul class="additional-info">
-                <li><strong>Leadership & Event Management:</strong> Held over 10 student and social work positions, including Student Union President. Organized and participated in over 50 events, reaching more than 10,000 participants, with new media readership exceeding 600,000 views. Developed strong self-control and emotional stability, excellent communication, coordination, responsibility, and stress resilience in multi-tasking roles. Able to adapt to high-intensity, multi-tasking work environments.</li>
-                <li><strong>Rapid Learning Ability:</strong> Demonstrated outstanding ability to quickly learn new software operations and theoretical concepts.</li>
-                <li><strong>Volunteer Experience:</strong> Participated in various volunteer activities, including the Olympic Games, science popularization, epidemic prevention and control, international education, and astronomical observation, accumulating over 200 hours of service.</li>
-                <li><strong>Teaching & Knowledge Sharing:</strong> Worked as a part-time tutor, teaching over 100 students for several years and receiving consistent positive feedback from students and parents. Actively shares knowledge online through multiple educational videos, with over 7,000 views.</li>
-                <li><strong>Media Coverage:</strong> Personal achievements have been reported by various levels of media in over 40 articles.</li>
-                <li><strong>Hobbies:</strong> Photography, Swimming, Traveling, Golf.</li>
+            <ul>
+                <li><strong>AI and Finance:</strong> Possesses cross-domain know-how in AI agents and finance, with hands-on experience implementing agent technologies in financial research scenarios.</li>
+                <li><strong>Investment Research:</strong> Has financial research internship experience and personal investment practice, with familiarity in secondary-market analysis and research.</li>
+                <li><strong>Leadership and Project Coordination:</strong> Held more than 10 student and social-work roles, including Student Union President; organized or participated in over 50 activities reaching more than 10,000 people, with new-media readership exceeding 600,000 views.</li>
+                <li><strong>Volunteer Experience:</strong> Participated in volunteer activities related to the Olympic Games, science popularization, epidemic prevention and control, international education, and astronomical observation, accumulating over 200 service hours.</li>
+                <li><strong>Teaching and Knowledge Sharing:</strong> Worked as a part-time tutor for several years, teaching more than 100 students and receiving consistent positive feedback; shared educational videos online with over 7,000 views.</li>
+                <li><strong>Media Coverage:</strong> Personal achievements have been reported by media at various levels in more than 40 articles.</li>
+                <li><strong>Hobbies:</strong> Photography, swimming, traveling, and golf.</li>
             </ul>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <!-- Chinese Content -->
-    <div id="chinese-content" class="hidden">
-        <div class="section">
+    <main id="chinese-content" class="hidden">
+        <section class="section">
             <h2 class="section-title">教育背景</h2>
-            
+
             <div class="subsection">
-                <div class="institution">香港中文大学（深圳）数据科学学院</div>
-                <div class="degree">硕士 人工智能与机器人</div>
-                <div class="date">2024.08 -- 今 预计2026年7月毕业</div>
+                <div class="institution">香港中文大学（深圳）数据科学学院 | 中国深圳</div>
+                <div class="degree">理学硕士在读，人工智能与机器人专业（GPA: 3.83）</div>
+                <div class="date">2024.08 - 今 | 预计2027年7月毕业</div>
+                <ul>
+                    <li>研究生入学奖学金。</li>
+                </ul>
             </div>
 
             <div class="subsection">
-                <div class="institution">中国地质大学（武汉）数学与物理学院</div>
-                <div class="degree">本科 物理学(GPA 88.33) 经济学(GPA 89.23)</div>
-                <div class="date">2020.09 -- 2024.06</div>
+                <div class="institution">中国地质大学（武汉）数学与物理学院 | 中国武汉</div>
+                <div class="degree">理学学士，主修物理学专业（GPA: 88.33），辅修经济学专业（GPA: 89.23）</div>
+                <div class="date">2020.09 - 2024.06</div>
+                <ul>
+                    <li>获得中国地质大学十大标兵学生（本科生最高荣誉）等各类奖项、奖学金、荣誉称号30余项。</li>
+                    <li>学术发表：<em>Applied Physics Express</em> (Q2) 15 117001，DOI: 10.35848/1882-0786/ac9953。</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">实习</h2>
-            
+        <section class="section">
+            <h2 class="section-title">经历</h2>
+
             <div class="subsection">
                 <div class="subsection-title">
-                    <span>国投证券股份有限公司</span>
+                    <span>国内头部百亿私募</span>
+                    <span class="right-aligned-date">2026.03 - 今</span>
+                </div>
+                <div class="position">金融大模型 Agent 算法实习生</div>
+                <ul>
+                    <li>面向私募金融投研场景，参与交付生产级 Multi-Agent 投研系统，覆盖研报理解、标的分析、组合跟踪、事实核查等长链路任务；系统以工作台形式落地，封装 21 个 skill / 9 个 agent / 10 个 workflow，已交付数十名种子用户使用，在核心投研任务的评测与用户反馈中均优于通用 Deep Research 产品及国内同类金融投研智能体，预计年内用户数突破百人。</li>
+                    <li>设计投研 Agent 的长链路执行 workflow 与 Tool Use 机制：记忆检索 -> 图谱核查 -> 实时数据补全 -> 推理生成 -> 审查写回；通过 Coordinator 进行多标的/多主题任务规划、工具路由、参数生成和上下文注入，并设计 fallback 链、改写重试和异常恢复机制，提升长链路任务的稳定性。</li>
+                    <li>建设 FundaCore 金融知识底座，面向研报、表格等多源金融数据结构化解析，保留章节/表格结构与 chunk 级证据溯源，并写入数据库与知识图谱；沉淀 Neo4j 2.0 万节点 / 16.1 万关系、SQLite 7.5 万 facts / 23.4 万证据；以混合检索 + 精排/去重支撑可追溯 RAG 和金融事实校验。</li>
+                    <li>设计投研 Memory 的“双库”架构与多用户隔离机制：共享行业事实库沉淀行业事实与证据，用户独立个性化记忆库沉淀个人观点和偏好；支持冷热记忆分层、时间衰减、event/ingest_time 双时态，并通过 userId 分库、共享库只读、写入路径校验与审计降低跨用户记忆污染风险。</li>
+                    <li>搭建 Agent Harness 与 Benchmark 评测驱动数据飞轮，将历史 session trace 解析为 workflow、tool pairing、subagent link、latency、failure taxonomy 等指标；将 ECHO 自演化项目产品化为 review-check 质量门禁，形成“评测 -> 失败归因 -> 新测生成 -> 再评测 -> prompt / 工具路由 / 记忆策略迭代”的非参数 Agentic Learning 闭环，在业务场景下持续优化长链路 Agent 表现。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span>国投证券股份有限公司 | 中国北京</span>
                     <span class="right-aligned-date">2024 夏</span>
                 </div>
-                <div class="position">投资研究岗位</div>
+                <div class="position">投资研究岗位，电子行业研究团队</div>
+                <div class="description">成立于2006年的全牌照综合类证券公司，多项业务排名位居国内前列。</div>
                 <ul>
-                    <li>搜集整理苹果生态相关行业、公司数据及动态信息，完成课题研究，撰写AI赋能下的苹果供应链行业深度报告。</li>
+                    <li>搜集整理苹果生态相关行业、公司数据及动态信息，完成课题研究，撰写 AI 赋能下的苹果供应链行业深度报告。</li>
                     <li>完成对扬杰科技、东微半导、大族激光、莱特光电等电子器件产品供应商的业务梳理与中报点评。</li>
                 </ul>
             </div>
 
             <div class="subsection">
                 <div class="subsection-title">
-                    <span>武汉麦思威科技有限公司</span>
+                    <span>武汉麦思威科技有限公司 | 中国武汉</span>
                     <span class="right-aligned-date">2023 夏</span>
                 </div>
-                <div class="position">硬件工程师岗位</div>
+                <div class="position">硬件工程师岗位，研发中心</div>
+                <div class="description">成立于2013年的高新技术企业，主要从事光电设备研发、设计和技术服务。</div>
                 <ul>
-                    <li>协助带教组装、调试光电实验仪器，并焊接、装配各类电子模块与产品。独立完成电路设计、仿真、编程、PCB打板、调试等流程。</li>
-                    <li>使用C语言开发了一套嵌入式实时温度监测与报警系统，集成了 DS18B20 和 MLX90614 传感器，实现了精确的温度测量、实时显示及可调节的超温报警功能。</li>
+                    <li>协助带教组装、调试光电实验仪器，并焊接、装配各类电子模块与产品；独立完成电路设计、仿真、编程、PCB 打板、调试等流程。</li>
+                    <li>使用 C 语言开发嵌入式实时温度监测与报警系统，集成 DS18B20 和 MLX90614 传感器，实现精确温度测量、实时显示及可调节超温报警功能。</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">项目</h2>
-            
+
             <div class="subsection">
-              	<div class="project-title">
-                    <span>基于LoRA的Qwen2.5法律领域LLM微调</span>
-                    <span class="right-aligned-date">2025 夏</span>
+                <div class="project-title">
+                    <span>ECHO：基于自演化可信手册的 Agent 事实核查系统</span>
+                    <span class="right-aligned-date">2025 - 2026</span>
                 </div>
+                <div class="description">Submitted to EMNLP。</div>
                 <ul>
-                    <li>在DISC-Law-SFT中文法律数据集上微调Qwen2.5大语言模型，增强了模型在法律领域的专业知识和文本生成能力，并优化了资源利用效率。</li>
-                    <li>通过结合4位量化与参数高效微调（PEFT）及LoRA技术，构建了高效的微调流程，显著减少了可训练参数，有效克服了计算资源限制。</li>
-                    <li>成功使LLM适应法律领域，能够生成与语境相关的法律回答，并通过定性评估和训练损失曲线验证了其有效性。</li>
+                    <li>基于 LangChain 封装模型与工具调用，并自研 GRC 多阶段 Agent 编排流程：Generator 完成声明拆解、证据检索与判决生成，Reflector (Reflexion) 基于执行轨迹诊断，Curator 将诊断转化为可复用规则更新，使系统从单次推理扩展为可持续积累经验的事实核查 Agent。</li>
+                    <li>设计外部化规则手册与 Detection / Trust 双记忆机制，缓解 Agent 容易过度怀疑与规则漂移的问题；实现渐进式上下文披露，规划阶段读取规则摘要，判决阶段按需加载完整规则，在保持 94% 规则一致性的同时将峰值 token 消耗降低 95%，降低长链路推理中的上下文压力与调用成本。</li>
+                    <li>构建 ECHO-Bench 与评估流水线；系统在两个事实核查基准上均刷新 SOTA（ECHO-Bench 84.65%、AVeriTeC 87.05%），较最强 Agent 基线分别提升 13.15pp / 6.49pp，并辅助人工核查准确率较无辅助提升 13.6pp。</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>基于注意力Seq2Seq与MinGPT的中英神经机器翻译</span>
+                <div class="project-title">
+                    <span>基于 LoRA 的 Qwen2.5 法律领域 LLM 微调</span>
                     <span class="right-aligned-date">2025 夏</span>
                 </div>
                 <ul>
-                    <li>开发并对比评估了两个用于中英机器翻译的神经网络机器翻译系统：基于Bahdanau注意力机制的Seq2Seq模型和经过微调的MinGPT Transformer。</li>
-                    <li>在约30,000对句子语料库上进行训练，进行了全面的数据预处理，包括中英文的BERT分词，并成功训练了两个模型，均实现了合理的翻译质量。</li>
-                    <li>设计了带有双向GRU编码器和注意力机制的Seq2Seq模型，并通过连接中英序列进行自回归预测来适配MinGPT模型。</li>
+                    <li>在 DISC-Law-SFT 中文法律数据集上微调 Qwen2.5 大语言模型，增强模型在法律领域的专业知识和文本生成能力，并优化资源利用效率。</li>
+                    <li>通过结合 4 位量化、参数高效微调（PEFT）及 LoRA 技术，构建高效微调流程，显著减少可训练参数，有效克服计算资源限制。</li>
+                    <li>成功使 LLM 适应法律领域，能够生成与语境相关的法律回答，并通过定性评估和训练损失曲线验证其有效性。</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>基于PyTorch与原生实现的图像分类神经网络架构优化</span>
+                <div class="project-title">
+                    <span>基于注意力 Seq2Seq 与 MinGPT 的中英神经机器翻译</span>
+                    <span class="right-aligned-date">2025 夏</span>
+                </div>
+                <ul>
+                    <li>开发并对比评估两个用于中英机器翻译的神经网络机器翻译系统：基于 Bahdanau 注意力机制的 Seq2Seq 模型和经过微调的 MinGPT Transformer。</li>
+                    <li>在约 30,000 对句子语料库上训练，进行了全面的数据预处理，包括中英文的 BERT 分词，并成功训练两个模型，均实现合理翻译质量。</li>
+                    <li>设计带有双向 GRU 编码器和注意力机制的 Seq2Seq 模型，并通过连接中英序列进行自回归预测来适配 MinGPT 模型。</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="project-title">
+                    <span>基于 PyTorch 与原生实现的图像分类神经网络架构优化</span>
                     <span class="right-aligned-date">2025 春</span>
                 </div>
                 <ul>
-                    <li>设计并优化了用于CIFAR-10和MNIST数据集的深度神经网络，涵盖基于PyTorch迭代增强的残差架构，以及从零开始的NumPy核心组件实现。</li>
-                    <li>使用包括ResNet迁移学习、AdamW结合余弦退火、Dropout和数据增强在内的深度学习技术，将 CIFAR-10 测试集准确率提升至 94.3%，MNIST 测试集准确率高达 99.56%。</li>
-                    <li>基于NumPy手动实现激活函数、卷积层、优化器等神经网络核心组件，在数据集上实现 97.29% 的准确率，深度掌握网络底层原理与运作机制。</li>
+                    <li>设计并优化用于 CIFAR-10 和 MNIST 数据集的深度神经网络，涵盖基于 PyTorch 迭代增强的残差架构，以及从零开始的 NumPy 核心组件实现。</li>
+                    <li>使用 ResNet 迁移学习、AdamW 结合余弦退火、Dropout 和数据增强等深度学习技术，将 CIFAR-10 测试集准确率提升至 94.3%，MNIST 测试集准确率高达 99.56%。</li>
+                    <li>基于 NumPy 手动实现激活函数、卷积层、优化器等神经网络核心组件，在数据集上实现 97.29% 的准确率，深度掌握网络底层原理与运作机制。</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
+                <div class="project-title">
                     <span>复泊松比对声波传输耗散的影响研究</span>
-                    <span class="right-aligned-date">2023-2024</span>
+                    <span class="right-aligned-date">2023 - 2024</span>
                 </div>
                 <ul>
                     <li>利用理论建模与仿真模拟推导泊松损耗因子并分析其对吸收率的影响。</li>
-                    <li>设计了在共振频率为82.1705 Hz时横波吸收率高达99.84%、而纵波吸收率仅为0.286%的人工超材料，体现出显著的吸收选择性。</li>
-                    <li>构建等效剪切模量与体积模量计算方法，深化了对能量耗散机制的理解。</li>
+                    <li>设计在共振频率为 82.1705 Hz 时横波吸收率高达 99.84%、而纵波吸收率仅为 0.286% 的人工超材料，体现出显著的吸收选择性。</li>
+                    <li>构建等效剪切模量与体积模量计算方法，深化对能量耗散机制的理解。</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>关于虚拟沉浸绿色自然对情绪的影响的meta分析</span>
+                <div class="project-title">
+                    <span>关于虚拟沉浸绿色自然对情绪影响的 Meta 分析</span>
                     <span class="right-aligned-date">2023 夏</span>
                 </div>
                 <ul>
                     <li>使用 RevMan 软件对 13 项定量研究（n=1917）的数据进行整合分析，得出积极情感的标准化平均差（SMD）为 0.42，消极情感的标准化平均差（SMD）为 -0.39。</li>
-                    <li>运用高级统计方法生成并解读了森林图和漏斗图，以评估潜在的发表偏倚和研究异质性。</li>
+                    <li>运用高级统计方法生成并解读森林图和漏斗图，以评估潜在发表偏倚和研究异质性。</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
+                <div class="project-title">
                     <span>基于贝叶斯方法的系外行星径向速度信号探测</span>
                     <span class="right-aligned-date">2023 春</span>
                 </div>
                 <ul>
-                    <li>运用Agatha工具对GJ551-ESPRESSO数据集径向速度（RV）数据进行分析，结合贝叶斯周期图技术识别时间序列中的周期性信号。</li>
-                    <li>使用ARMA模型与MCMC方法获取轨道解并估计相关参数。</li>
+                    <li>运用 Agatha 工具对 GJ551-ESPRESSO 数据集径向速度（RV）数据进行分析，结合贝叶斯周期图技术识别时间序列中的周期性信号。</li>
+                    <li>使用 ARMA 模型与 MCMC 方法获取轨道解并估计相关参数。</li>
                 </ul>
             </div>
 
             <div class="subsection">
-              	<div class="project-title">
-                    <span>具有各向异性共振的超薄弹性超材料实现纵波和横波的全转换</span>
-                    <span class="right-aligned-date">2021-2022</span>
+                <div class="project-title">
+                    <span>具有各向异性共振的超薄弹性超材料实现纵波和横波全转换</span>
+                    <span class="right-aligned-date">2021 - 2022</span>
                 </div>
                 <ul>
-                    <li>设计由倾斜排列的各向异性谐振器构成的超薄超材料板，实现了在入射波长远大于厚度的条件下，P波与S波之间超过95%的高效转换。</li>
-                    <li>构建并完善了基于质量--弹簧模型的弹性波模态转换理论框架，达到解析计算结果与仿真结果高度一致。</li>
-                    <li>主导理论推导与部分仿真工作，成为同年级首位发表SCI论文的本科生。</li>
+                    <li>设计由倾斜排列的各向异性谐振器构成的超薄超材料板，实现了在入射波长远大于厚度的条件下，P 波与 S 波之间超过 95% 的高效转换。</li>
+                    <li>构建并完善基于质量-弹簧模型的弹性波模态转换理论框架，达到解析计算结果与仿真结果高度一致。</li>
+                    <li>主导理论推导与部分仿真工作，成为同年级首位发表 SCI 论文的本科生。</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">奖项&荣誉</h2>
-            <ul class="awards-list">
-                <li>2024香港中文大学（深圳）研究生入学奖学金</li>
-                <li>2024年中国地质大学十大标兵学生（TOP10，本科生最高荣誉）</li>
-                <li>2024年优秀毕业生</li>
-                <li>2021年、2022年 校长奖学金（TOP 5%），2023年 校友奖学金（TOP 10）</li>
-                <li>2021年、2023年 校级优秀学生干部，2022年校级优秀学生</li>
-                <li>2023年数学与物理学院"数理先锋"年度人物（学院最高荣誉）</li>
-                <li>若干学科竞赛、创新创业竞赛、社会实践奖项。（大学期间获得各类奖项、奖学金、荣誉称号等共30余项）</li>
+        <section class="section">
+            <h2 class="section-title">学术发表</h2>
+            <ul>
+                <li>具有各向异性共振的超薄弹性超材料实现纵波和横波全转换，<em>Applied Physics Express</em> (Q2) 15 117001，DOI: 10.35848/1882-0786/ac9953。</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">技能&证书</h2>
+        <section class="section">
+            <h2 class="section-title">奖项与荣誉</h2>
+            <ul>
+                <li>2024 香港中文大学（深圳）研究生入学奖学金。</li>
+                <li>2024 年中国地质大学十大标兵学生（TOP10，本科生最高荣誉）。</li>
+                <li>2024 年优秀毕业生。</li>
+                <li>2021 年、2022 年校长奖学金（TOP 5%），2023 年校友奖学金（TOP 10）。</li>
+                <li>2021 年、2023 年校级优秀学生干部，2022 年校级优秀学生。</li>
+                <li>2023 年数学与物理学院“数理先锋”年度人物（学院最高荣誉）。</li>
+                <li>获得若干学科竞赛、创新创业竞赛、社会实践奖项；大学期间获得各类奖项、奖学金、荣誉称号等共 30 余项。</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">技能与证书</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <div class="skill-name">编程与软件：</div>
-                    <div class="skill-details">Python(PyTorch/TensorFlow)，R，COMSOL，ImageJ，Latex (熟练), Matlab，SPSS (基础)</div>
+                    <div class="skill-name">AI、数据与 Agent 系统</div>
+                    <div class="skill-details">LLM Agent、Multi-Agent workflow、RAG、Tool Use、LangChain、Benchmark/评测流水线、Neo4j、SQLite。</div>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-name">语言能力：</div>
-                    <div class="skill-details">通过大学英语四/六级（CET-4/6），雅思7分，具有良好的听说读写能力；普通话一级乙等</div>
+                    <div class="skill-name">编程与软件</div>
+                    <div class="skill-details">Python（PyTorch/TensorFlow）、R、COMSOL、ImageJ、LaTeX（熟练）；Matlab、SPSS（基础）。</div>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-name">证书：</div>
-                    <div class="skill-details">(AI+RPA) 开发者中级工程师认证；腾讯未来产品经理创造营结课证书</div>
+                    <div class="skill-name">语言能力</div>
+                    <div class="skill-details">大学英语四/六级（CET-4/6），雅思 7.0，具备英文文献阅读、技术写作与跨团队沟通能力；普通话一级乙等。</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-name">证书</div>
+                    <div class="skill-details">(AI+RPA) 开发者中级工程师认证；腾讯未来产品经理创造营结课证书。</div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">其他</h2>
-            <ul class="additional-info">
-                <li>拥有学生会主席等10余段学生工作与社会工作经历，共组织参与各类活动50余场，各类活动覆盖10000余人，新媒体阅读量已达到60万+。在身兼数职的过程中培养了极强的自我控制与稳定情绪能力，具有表达沟通和统筹能力，具备极强的责任心和抗压能力，能适应高强度与多任务工作。</li>
-                <li>具有出色的快速学习能力，包括但不限于软件操作与理论概念的学习。</li>
-                <li>参加奥运会、知识科普、疫情防控、国际教育、天文观测等多项志愿活动，参与志愿活动超200小时。</li>
-                <li>利用课余时间兼职家教，多年时间教学超百名学生，获得学生及家长的一致好评。注重知识共享，已经在网络上分享多个知识类视频，播放量已达7000余次。</li>
-                <li>个人事迹被各级媒体宣传报道40余篇。</li>
-                <li>爱好：摄影、游泳、旅游、高尔夫。</li>
+        <section class="section">
+            <h2 class="section-title">其他信息</h2>
+            <ul>
+                <li><strong>AI 与金融交叉：</strong>具备 AI Agent 与金融交叉的 know-how，熟悉 Agent 等相关 AI 技术的金融场景落地。</li>
+                <li><strong>投资研究：</strong>具备金融投研实习经历和个人投资实践经验，熟悉二级市场分析与研究。</li>
+                <li><strong>领导力与项目统筹：</strong>拥有学生会主席等 10 余段学生工作与社会工作经历，共组织参与各类活动 50 余场，覆盖 10000 余人，新媒体阅读量达到 60 万+。</li>
+                <li><strong>志愿服务：</strong>参加奥运会、知识科普、疫情防控、国际教育、天文观测等多项志愿活动，参与志愿活动超 200 小时。</li>
+                <li><strong>教学与知识共享：</strong>利用课余时间兼职家教，多年时间教学超百名学生，获得学生及家长一致好评；在网络上分享多个知识类视频，播放量达 7000 余次。</li>
+                <li><strong>媒体报道：</strong>个人事迹被各级媒体宣传报道 40 余篇。</li>
+                <li><strong>爱好：</strong>摄影、游泳、旅游、高尔夫。</li>
             </ul>
+        </section>
+    </main>
+            </div>
         </div>
     </div>
+
     <script>
-        let isEnglish; // 这将根据浏览器或 localStorage 设置
-    
+        let isEnglish = true;
+
+        function setLanguage(language) {
+            const englishContent = document.getElementById("english-content");
+            const chineseContent = document.getElementById("chinese-content");
+            const toggleText = document.getElementById("toggle-text");
+            const englishOnly = document.querySelectorAll(".english-only");
+            const chineseOnly = document.querySelectorAll(".chinese-only");
+            isEnglish = language === "english";
+
+            englishContent.classList.toggle("hidden", !isEnglish);
+            chineseContent.classList.toggle("hidden", isEnglish);
+            englishOnly.forEach((element) => element.classList.toggle("hidden", !isEnglish));
+            chineseOnly.forEach((element) => element.classList.toggle("hidden", isEnglish));
+            document.documentElement.lang = isEnglish ? "en" : "zh";
+            toggleText.textContent = isEnglish ? "中文" : "English";
+            localStorage.setItem("language", language);
+        }
+
         function toggleLanguage() {
-            const englishContent = document.getElementById('english-content');
-            const chineseContent = document.getElementById('chinese-content');
-    
-            if (isEnglish) {
-                englishContent.classList.add('hidden');
-                chineseContent.classList.remove('hidden');
-                document.documentElement.lang = 'zh';
-                isEnglish = false;
-                localStorage.setItem('language', 'chinese');
-            } else {
-                chineseContent.classList.add('hidden');
-                englishContent.classList.remove('hidden');
-                document.documentElement.lang = 'en';
-                isEnglish = true;
-                localStorage.setItem('language', 'english');
+            setLanguage(isEnglish ? "chinese" : "english");
+        }
+
+        function scrollToSection(index) {
+            const activeContent = document.getElementById(isEnglish ? "english-content" : "chinese-content");
+            const target = activeContent.querySelectorAll(".section")[index];
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         }
-    
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLanguage = localStorage.getItem('language');
-            const englishContent = document.getElementById('english-content');
-            const chineseContent = document.getElementById('chinese-content');
-    
-            if (savedLanguage) {
-                // 如果保存了语言偏好，则使用它
-                if (savedLanguage === 'chinese') {
-                    englishContent.classList.add('hidden');
-                    chineseContent.classList.remove('hidden');
-                    document.documentElement.lang = 'zh';
-                    isEnglish = false;
-                } else {
-                    chineseContent.classList.add('hidden');
-                    englishContent.classList.remove('hidden');
-                    document.documentElement.lang = 'en';
-                    isEnglish = true;
-                }
-            } else {
-                // 如果没有保存语言偏好，则检测浏览器语言
-                const browserLanguage = navigator.language || navigator.userLanguage; // navigator.userLanguage 用于旧版浏览器
-                if (browserLanguage.startsWith('zh')) { // 检查浏览器语言是否以 'zh' 开头表示中文
-                    englishContent.classList.add('hidden');
-                    chineseContent.classList.remove('hidden');
-                    document.documentElement.lang = 'zh';
-                    isEnglish = false;
-                } else {
-                    // 对于其他语言或检测失败时，默认显示英文
-                    chineseContent.classList.add('hidden');
-                    englishContent.classList.remove('hidden');
-                    document.documentElement.lang = 'en';
-                    isEnglish = true;
-                }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLanguage = localStorage.getItem("language");
+            if (savedLanguage === "english" || savedLanguage === "chinese") {
+                setLanguage(savedLanguage);
+                return;
             }
+
+            const browserLanguage = navigator.language || navigator.userLanguage || "";
+            setLanguage(browserLanguage.startsWith("zh") ? "chinese" : "english");
         });
     </script>
 </body>
