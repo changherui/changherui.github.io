@@ -130,7 +130,7 @@
             display: grid;
             grid-template-columns: minmax(0, 1.42fr) minmax(280px, 0.58fr);
             gap: 34px;
-            align-items: end;
+            align-items: start;
         }
 
         .title {
@@ -163,14 +163,14 @@
         }
 
         .metric-grid {
+            align-self: center;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 10px;
         }
 
         .metric {
-            min-height: 88px;
-            padding: 14px;
+            padding: 12px 10px;
             border: 1px solid var(--line);
             border-radius: 8px;
             background: rgba(246, 248, 249, 0.9);
@@ -179,7 +179,7 @@
         .metric-value {
             display: block;
             color: var(--ink);
-            font-size: 1.35rem;
+            font-size: 1rem;
             font-weight: 760;
             line-height: 1.2;
         }
@@ -490,7 +490,6 @@
                 font-size: 2.22rem;
             }
 
-            .metric-grid,
             .skills-grid {
                 grid-template-columns: 1fr;
             }
@@ -590,24 +589,24 @@
 </div>
 <div aria-label="Selected highlights" class="metric-grid">
 <div class="metric">
-<span class="metric-value"><span class="english-only">Research agent</span><span class="chinese-only hidden">投研智能体</span></span>
-<span class="metric-label english-only">Built the first version of a research workbench where fund analysts can retrieve evidence, run analyses and draft reports.</span>
-<span class="metric-label chinese-only hidden">独立开发首版投研系统，让私募研究员能在同一工作台检索资料、调用分析工具并生成研究报告。</span>
+<span class="metric-value"><span class="english-only">Research AI</span><span class="chinese-only hidden">投研智能体</span></span>
+<span class="metric-label english-only">Solo-built v1</span>
+<span class="metric-label chinese-only hidden">独立开发首版</span>
 </div>
 <div class="metric">
-<span class="metric-value"><span class="english-only">Live trading</span><span class="chinese-only hidden">交易执行</span></span>
-<span class="metric-label english-only">Connected research, independent review and position sizing to order execution in a live brokerage account.</span>
-<span class="metric-label chinese-only hidden">将标的研究、独立复核和仓位决策接入交易流程，通过券商接口在真实证券账户执行订单。</span>
+<span class="metric-value"><span class="english-only">Trading agent</span><span class="chinese-only hidden">交易智能体</span></span>
+<span class="metric-label english-only">Live account</span>
+<span class="metric-label chinese-only hidden">接入实盘账户</span>
 </div>
 <div class="metric">
-<span class="metric-value"><span class="english-only">RL tasks</span><span class="chinese-only hidden">金融训练环境</span></span>
-<span class="metric-label english-only">Designed reinforcement learning tasks with verifiable scoring for valuation and earnings forecasts, fraud detection and financial fact-checking.</span>
-<span class="metric-label chinese-only hidden">主导设计盈利预测与估值、财务造假审计和金融事实核验任务，为强化学习提供可验证的评分规则。</span>
+<span class="metric-value"><span class="english-only">RL tasks</span><span class="chinese-only hidden">强化学习环境</span></span>
+<span class="metric-label english-only">3 task families</span>
+<span class="metric-label chinese-only hidden">三类金融训练任务</span>
 </div>
 <div class="metric">
-<span class="metric-value"><span class="english-only">Agent evaluation</span><span class="chinese-only hidden">智能体评测</span></span>
-<span class="metric-label english-only">Replayed research tasks to compare system versions and built a technical analysis benchmark to evaluate model reasoning and decisions.</span>
-<span class="metric-label chinese-only hidden">用真实投研任务回放比较系统版本，并建立技术面分析基准，检验不同模型的分析与决策能力。</span>
+<span class="metric-value"><span class="english-only">Agent testing</span><span class="chinese-only hidden">智能体评测</span></span>
+<span class="metric-label english-only">Research replay</span>
+<span class="metric-label chinese-only hidden">真实投研任务回放</span>
 </div>
 </div>
 </div>
