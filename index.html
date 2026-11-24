@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Herui Chang's bilingual technical resume, focused on AI agent systems, financial research, RAG, and fact-checking.">
-    <title>Herui (Henry) CHANG | 常贺瑞</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Herui Chang's bilingual technical resume, focused on AI agent systems, financial research, RAG, and fact-checking." name="description"/>
+<title>Herui (Henry) CHANG | 常贺瑞</title>
+<style>
         :root {
             --paper: #ffffff;
             --surface: #f6f8f9;
@@ -566,556 +567,521 @@
     </style>
 </head>
 <body>
-    <div class="page">
-        <header class="header">
-            <div class="topbar">
-                <div class="kicker">
-                    <span class="english-only">Technical Resume / AI x Finance</span>
-                    <span class="chinese-only hidden">技术简历 / AI x 金融</span>
-                </div>
-                <button class="language-toggle" type="button" onclick="toggleLanguage()">
-                    <span id="toggle-text">中文</span>
-                </button>
-            </div>
+<div class="page">
+<header class="header">
+<div class="topbar">
+<div class="kicker">
+<span class="english-only">Technical Resume / AI x Finance</span>
+<span class="chinese-only hidden">技术简历 / AI x 金融</span>
+</div>
+<button class="language-toggle" onclick="toggleLanguage()" type="button">
+<span id="toggle-text">中文</span>
+</button>
+</div>
+<div class="hero-grid">
+<div>
+<h1 class="title">Herui (Henry) CHANG <span>| 常贺瑞</span></h1>
+<div class="role">
+<span class="english-only">AI Agent Systems · Financial Research · Fact-Checking</span>
+<span class="chinese-only hidden">AI Agent 系统 · 金融投研 · 事实核查</span>
+</div>
+<p class="summary english-only">I am an M.Sc. candidate in Artificial Intelligence and Robotics at CUHK-Shenzhen. I independently built an investment research agent for private-fund analysts and, as a core developer on the founding team, extended it to personalized research and trade execution. I also develop financial training environments and study agent evaluation and fact-checking.</p>
+<p class="summary chinese-only hidden">香港中文大学（深圳）人工智能与机器人硕士在读。我在私募独立开发了面向研究员的投研智能体，随后作为创始团队核心研发成员，将系统从投研分析拓展至个性化研究与交易执行。我的研究工作还包括金融强化学习训练环境、智能体评测与事实核查。</p>
+</div>
+<div aria-label="Selected highlights" class="metric-grid">
+<div class="metric">
+<span class="metric-value"><span class="english-only">Research agent</span><span class="chinese-only hidden">投研智能体</span></span>
+<span class="metric-label english-only">Built the first version of a research workbench where fund analysts can retrieve evidence, run analyses and draft reports.</span>
+<span class="metric-label chinese-only hidden">独立开发首版投研系统，让私募研究员能在同一工作台检索资料、调用分析工具并生成研究报告。</span>
+</div>
+<div class="metric">
+<span class="metric-value"><span class="english-only">Live trading</span><span class="chinese-only hidden">交易执行</span></span>
+<span class="metric-label english-only">Connected research, independent review and position sizing to order execution in a live brokerage account.</span>
+<span class="metric-label chinese-only hidden">将标的研究、独立复核和仓位决策接入交易流程，通过券商接口在真实证券账户执行订单。</span>
+</div>
+<div class="metric">
+<span class="metric-value"><span class="english-only">RL tasks</span><span class="chinese-only hidden">金融训练环境</span></span>
+<span class="metric-label english-only">Designed reinforcement learning tasks with verifiable scoring for valuation and earnings forecasts, fraud detection and financial fact-checking.</span>
+<span class="metric-label chinese-only hidden">主导设计盈利预测与估值、财务造假审计和金融事实核验任务，为强化学习提供可验证的评分规则。</span>
+</div>
+<div class="metric">
+<span class="metric-value"><span class="english-only">Agent evaluation</span><span class="chinese-only hidden">智能体评测</span></span>
+<span class="metric-label english-only">Replayed research tasks to compare system versions and built a technical analysis benchmark to evaluate model reasoning and decisions.</span>
+<span class="metric-label chinese-only hidden">用真实投研任务回放比较系统版本，并建立技术面分析基准，检验不同模型的分析与决策能力。</span>
+</div>
+</div>
+</div>
+<div class="contact">
+<span class="contact-item"><a href="mailto:heruichang@link.cuhk.edu.cn">heruichang@link.cuhk.edu.cn</a></span>
+<span class="contact-item"><a href="https://changherui.github.io/">changherui.github.io</a></span>
+<span class="contact-item english-only">Shenzhen, China</span>
+<span class="contact-item chinese-only hidden">中国深圳</span>
+</div>
+</header>
+<div class="content-shell">
+<aside aria-label="Page navigation" class="section-rail">
+<div class="section-rail-title">
+<span class="english-only">Sections</span>
+<span class="chinese-only hidden">目录</span>
+</div>
+<nav class="section-nav">
+<button onclick="scrollToSection(0)" type="button">
+<span class="english-only">Education</span>
+<span class="chinese-only hidden">教育</span>
+</button>
+<button onclick="scrollToSection(1)" type="button">
+<span class="english-only">Experience</span>
+<span class="chinese-only hidden">经历</span>
+</button>
+<button onclick="scrollToSection(2)" type="button">
+<span class="english-only">Projects</span>
+<span class="chinese-only hidden">项目</span>
+</button>
+<button onclick="scrollToSection(3)" type="button">
+<span class="english-only">Publication</span>
+<span class="chinese-only hidden">发表</span>
+</button>
+<button onclick="scrollToSection(4)" type="button">
+<span class="english-only">Awards</span>
+<span class="chinese-only hidden">荣誉</span>
+</button>
+<button onclick="scrollToSection(5)" type="button">
+<span class="english-only">Skills</span>
+<span class="chinese-only hidden">技能</span>
+</button>
+<button onclick="scrollToSection(6)" type="button">
+<span class="english-only">Other</span>
+<span class="chinese-only hidden">其他</span>
+</button>
+</nav>
+</aside>
+<div class="content-panel">
+<main id="english-content">
+<section class="section">
+<h2 class="section-title">Education</h2>
+<div class="subsection">
+<div class="institution">The Chinese University of Hong Kong, Shenzhen | Shenzhen, China</div>
+<div class="degree">M.Sc. candidate in Artificial Intelligence and Robotics · School of Data Science</div>
+<div class="date">Aug 2024 — expected Mar 2027</div>
+<ul>
+<li>Postgraduate Admission Scholarship, Outstanding Contribution Scholarship and College Scholarship.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="institution">China University of Geosciences (Wuhan) | Wuhan, China</div>
+<div class="degree">B.Sc. in Physics (GPA: 88.33) with Minor in Economics (GPA: 89.23), School of Mathematics and Physics</div>
+<div class="date">Sep 2020 - Jun 2024</div>
+<ul>
+<li>Top 10 Model Student of China University of Geosciences (Wuhan), the highest undergraduate honor; accumulated more than 30 awards, scholarships, and honors.</li>
+<li>Academic publication: <em>Applied Physics Express</em> (Q2) 15 117001, DOI: 10.35848/1882-0786/ac9953.</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Experience</h2>
+<div class="subsection">
+<div class="subsection-title">
+<span>深圳思演知策科技有限公司 | Shenzhen, China</span>
+<span class="right-aligned-date">Jul 2026 — present</span>
+</div>
+<div class="position">Algorithm Engineering Intern · founding team, core development</div>
+<div class="description">Following the first release I built at a private fund, I led core architecture and feature development as the product expanded from investment research into trade execution.</div><ul><li>Unified financial data tools, research skills and multi-step workflows in a shared execution framework for the web and mobile apps. I developed tool routing, context management and workflow orchestration.</li><li>Led the design and launch of an investor profile system. It updates near-term interests separately from long-term research preferences. In a new conversation the agent draws on both to decide what to retrieve, which tools to use and how to frame the analysis.</li><li>Developed a trading agent that assigns security research, independent review and portfolio decisions to separate agents. The decision agent can request further research, size positions against portfolio constraints and produce an order plan. The system has been connected to a live brokerage account. I also integrated Futu OpenD in Python and implemented order deduplication, status tracking, position reconciliation and trade-signal synchronization.</li><li>Led development of environments for equity earnings forecasts and valuation, financial fraud auditing, and financial fact verification. Defined source materials, evidence cutoffs and verifiable scoring rules for multi-step retrieval, calculation and review.</li><li>Built a benchmark for technical analysis of Chinese and US equities. Tasks span securities, sectors and market-wide conditions across time horizons. Historical prices and research materials ground tests of indicator calculation, market interpretation, reasoning and trading decisions. Scoring criteria allow defensible alternative answers.</li></ul>
+</div><div class="subsection">
+<div class="subsection-title">
+<span>Chinese private fund · RMB 10B+ in AUM</span>
+<span class="right-aligned-date">Mar — Jun 2026</span>
+</div>
+<div class="position">Financial AI Agent Engineering Intern</div>
+<div class="description">Built for private-fund analysts, alongside its financial knowledge base and repeatable evaluation suite.</div><ul><li>Independently designed and built the first investment research workbench. I implemented task decomposition, parallel agent scheduling and tool calls in Python, connecting financial data providers, research documents and the fund’s internal databases for multi-company analysis. The research workflow moves from memory retrieval and graph checks to live data, reasoning, review and write-back.</li><li>Parsed research reports and financial statements into a Neo4j graph of financial entities. SQLite held 75,000 facts and 234,000 evidence records, with conclusions linked to the original sections and tables for cross-document verification. Shared industry knowledge and individual research views are stored separately, with user-level isolation, write validation and auditing.</li><li>Built test cases from real research conversations and replayed successive versions against the same data snapshots. Execution traces made it possible to compare routing, tool use, evidence, latency and cost, and to distinguish missed retrievals from unused evidence and unsupported claims.</li></ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">
+<span>SDIC Securities Co., Ltd. | Beijing, China</span>
+<span class="right-aligned-date">Summer 2024</span>
+</div>
+<div class="position">Investment Research Intern, Electronic Industry Research Team</div>
+<div class="description">A fully licensed comprehensive securities firm established in 2006, with multiple business lines ranked among the top in China.</div>
+<ul>
+<li>Collected industry, company, and news data across the Apple ecosystem to complete topic research and draft an in-depth report on the Apple supply chain empowered by Apple Intelligence.</li>
+<li>Reviewed businesses and interim results for electronic component suppliers including Yangjie Technology, Oriental Semi, Han's Laser, and Wright Optoelectronics.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">
+<span>Mesway Technology Co., Ltd. | Wuhan, China</span>
+<span class="right-aligned-date">Summer 2023</span>
+</div>
+<div class="position">Hardware Engineer Intern, R&amp;D Center</div>
+<div class="description">A high-tech enterprise engaged in research, design, and technical services for optoelectronic equipment.</div>
+<ul>
+<li>Assisted the mentor team in assembling and calibrating optoelectronic experimental instruments, soldered and assembled electronic modules and products, and independently completed circuit design, simulation, programming, PCB fabrication, and debugging.</li>
+<li>Developed an embedded real-time temperature monitoring and alarm system in C, integrating DS18B20 and MLX90614 sensors for precise temperature measurement, real-time display, and adjustable over-temperature alerts.</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Projects</h2>
+<div class="subsection">
+<div class="project-title">
+<span>ECHO: Agent Fact-Checking System Based on Self-Evolving Credibility Handbooks</span>
+<span class="right-aligned-date">2025 - 2026</span>
+</div>
+<div class="description">Submitted to ACL Rolling Review (ARR).</div>
+<ul>
+<li>Built model and tool orchestration with LangChain and developed an in-house Generator-Reflector-Curator multi-stage agent workflow: the Generator decomposes claims, retrieves evidence, and produces verdicts; the Reflector diagnoses execution traces with Reflexion; and the Curator converts diagnoses into reusable rule updates, extending the system from single-shot reasoning to a fact-checking agent that accumulates experience.</li>
+<li>Designed an externalized rule handbook and a Detection / Trust dual-memory mechanism to mitigate over-skepticism and rule drift in agents. Implemented progressive context disclosure, reading rule summaries during planning and loading full rules only when needed at verdict time, maintaining 94% rule consistency while reducing peak token consumption by 95%.</li>
+<li>Built ECHO-Bench and the evaluation pipeline. The system achieves state-of-the-art results on two fact-checking benchmarks, 84.65% on ECHO-Bench and 87.05% on AVeriTeC, outperforming the strongest agent baselines by 13.15pp and 6.49pp respectively, and improving human-assisted fact-checking accuracy by 13.6pp over the unaided setting.</li>
+</ul>
+</div><div class="subsection">
+<div class="project-title">
+<span>AFAC 2026 · Market participant behavior identification</span>
+<span class="right-aligned-date">2026</span>
+</div>
+<ul><li>Built trading-behavior features from Level-2 market data for about 100 equities and used weak supervision to identify types of market participants.</li><li>Compared label construction and candidate selection through controlled submissions, using leaderboard feedback to retain a stable baseline and revert regressions. Best leaderboard position was in the top 20.</li></ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Qwen2.5 Legal-Domain LLM Fine-Tuning with LoRA</span>
+<span class="right-aligned-date">Summer 2025</span>
+</div>
+<ul>
+<li>Fine-tuned Qwen2.5 large language models on the DISC-Law-SFT Chinese legal dataset, enhancing domain-specific knowledge and text generation capabilities while optimizing resource utilization.</li>
+<li>Built an efficient fine-tuning pipeline by combining 4-bit quantization, parameter-efficient fine-tuning, and LoRA, significantly reducing trainable parameters and overcoming compute constraints.</li>
+<li>Adapted the LLM to the legal domain, enabling contextually relevant legal answers and validating effectiveness through qualitative evaluation and training-loss curves.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Chinese-to-English Neural Machine Translation with Seq2Seq Attention and MinGPT</span>
+<span class="right-aligned-date">Summer 2025</span>
+</div>
+<ul>
+<li>Developed and compared two neural machine translation systems for Chinese-to-English translation: a Bahdanau attention-based Seq2Seq model and a fine-tuned MinGPT Transformer.</li>
+<li>Trained on approximately 30,000 sentence pairs with comprehensive preprocessing, including BERT tokenization for both Chinese and English, and successfully produced reasonable translation quality from both models.</li>
+<li>Designed a Seq2Seq model with a bidirectional GRU encoder and attention mechanism, and adapted MinGPT by concatenating Chinese and English sequences for autoregressive prediction.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Image Classification Network Optimization with PyTorch and Native Implementation</span>
+<span class="right-aligned-date">Spring 2025</span>
+</div>
+<ul>
+<li>Designed and optimized deep neural networks for CIFAR-10 and MNIST, covering iteratively improved PyTorch residual architectures and NumPy implementations of core neural-network components from scratch.</li>
+<li>Applied deep-learning techniques including ResNet transfer learning, AdamW with cosine annealing, dropout, and data augmentation, improving test accuracy to 94.3% on CIFAR-10 and 99.56% on MNIST.</li>
+<li>Manually implemented activation functions, convolutional layers, optimizers, and other neural-network components in NumPy, achieving 97.29% accuracy and deepening understanding of network internals.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Impact of Complex Poisson Ratio on Sound Transmission Dissipation</span>
+<span class="right-aligned-date">2023 - 2024</span>
+</div>
+<ul>
+<li>Used theoretical modeling and simulation to derive the Poisson loss factor and analyze its influence on absorption rate.</li>
+<li>Designed an artificial metamaterial with a transverse-wave absorption rate of 99.84% at a resonance frequency of 82.1705 Hz, while the longitudinal-wave absorption rate was only 0.286%, demonstrating significant absorption selectivity.</li>
+<li>Developed a calculation method for equivalent shear and bulk moduli, deepening understanding of the energy dissipation mechanism.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Meta-Analysis of the Effects of Virtual Immersion in Green Nature on Affect</span>
+<span class="right-aligned-date">Summer 2023</span>
+</div>
+<ul>
+<li>Used RevMan to synthesize data from 13 quantitative studies (n=1917), obtaining a standardized mean difference of 0.42 for positive affect and -0.39 for negative affect.</li>
+<li>Generated and interpreted forest plots and funnel plots with advanced statistical methods to assess potential publication bias and research heterogeneity.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Bayesian Radial-Velocity Signal Detection for Exoplanets</span>
+<span class="right-aligned-date">Spring 2023</span>
+</div>
+<ul>
+<li>Used Agatha to analyze radial-velocity data from the GJ551-ESPRESSO dataset and combined Bayesian periodogram methods to identify periodic signals in time series.</li>
+<li>Used ARMA and MCMC methods to obtain orbital solutions and estimate related parameters.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>Total P-Wave and S-Wave Conversion in Ultrathin Elastic Metamaterials with Anisotropic Resonance</span>
+<span class="right-aligned-date">2021 - 2022</span>
+</div>
+<ul>
+<li>Designed an ultrathin metamaterial plate composed of obliquely arranged anisotropic resonators, achieving more than 95% conversion between P waves and S waves under incident wavelengths far larger than the plate thickness.</li>
+<li>Built and refined a theoretical framework for elastic-wave mode conversion based on a mass-spring model, achieving high consistency between analytical calculations and simulations.</li>
+<li>Led the theoretical derivation and part of the simulation work, becoming the first undergraduate in the cohort to publish an SCI paper.</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Publication</h2>
+<ul>
+<li>Total wave conversion in ultrathin elastic metamaterials with anisotropic resonance, <em>Applied Physics Express</em> (Q2) 15 117001, DOI: 10.35848/1882-0786/ac9953.</li>
+</ul>
+</section>
+<section class="section">
+<h2 class="section-title">Awards &amp; Honors</h2>
+<ul>
+<li>CUHK-Shenzhen Postgraduate Admission Scholarship (2024), Outstanding Contribution Scholarship and College Scholarship.</li>
+<li>2024 China University of Geosciences (Wuhan) Top 10 Model Students, the highest undergraduate honor.</li>
+<li>2024 Outstanding Graduate.</li>
+<li>2021 and 2022 President's Scholarship (Top 5%); 2023 Alumni Scholarship (Top 10%).</li>
+<li>2021 and 2023 University-level Outstanding Student Leader; 2022 University-level Outstanding Student.</li>
+<li>2023 "Pioneer of Mathematics and Physics" Person of the Year, the highest honor in the School.</li>
+<li>More than 30 awards, scholarships, and honors across academic competitions, innovation and entrepreneurship competitions, and social-practice activities.</li>
+</ul>
+</section>
+<section class="section">
+<h2 class="section-title">Skills &amp; Certificates</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<div class="skill-name">AI, Data, and Agent Systems</div>
+<div class="skill-details">Multi-agent systems, tool use, RAG, LangChain, MCP, model and product evaluation, Neo4j, SQLite, PostgreSQL and Futu OpenD.</div>
+</div>
+<div class="skill-category">
+<div class="skill-name">Programming and Software</div>
+<div class="skill-details">Python (PyTorch/TensorFlow), R, COMSOL, ImageJ, LaTeX (proficient); Matlab and SPSS (basic).</div>
+</div>
+<div class="skill-category">
+<div class="skill-name">Languages</div>
+<div class="skill-details">CET-4/6, IELTS 7.0, strong English reading, writing, listening, and speaking ability; Mandarin Level 1-B.</div>
+</div>
+<div class="skill-category">
+<div class="skill-name">Certificates</div>
+<div class="skill-details">(AI+RPA) Developer Intermediate Engineer Certification; Tencent Future Product Manager Creation Camp completion certificate.</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Additional Information</h2>
+<ul>
 
-            <div class="hero-grid">
-                <div>
-                    <h1 class="title">Herui (Henry) CHANG <span>| 常贺瑞</span></h1>
-                    <div class="role">
-                        <span class="english-only">AI Agent Systems · Financial Research · Fact-Checking</span>
-                        <span class="chinese-only hidden">AI Agent 系统 · 金融投研 · 事实核查</span>
-                    </div>
-                    <p class="summary english-only">
-                        M.Sc. candidate in Artificial Intelligence and Robotics at CUHK-Shenzhen, focused on reliable long-horizon agent systems for financial research, traceable RAG, and benchmark-driven agent improvement.
-                    </p>
-                    <p class="summary chinese-only hidden">
-                        香港中文大学（深圳）人工智能与机器人硕士在读，关注金融投研场景下可靠长链路 Agent、可追溯 RAG 与评测驱动的 Agent 能力迭代。
-                    </p>
-                </div>
+<li><strong>Investment Research:</strong> Has financial research internship experience and personal investment practice, with familiarity in secondary-market analysis and research.</li>
+<li><strong>Leadership and Project Coordination:</strong> Held more than 10 student and social-work roles, including Student Union President; organized or participated in over 50 activities reaching more than 10,000 people, with new-media readership exceeding 600,000 views.</li>
+<li><strong>Volunteer Experience:</strong> Participated in volunteer activities related to the Olympic Games, science popularization, epidemic prevention and control, international education, and astronomical observation, accumulating over 200 service hours.</li>
+<li><strong>Teaching and Knowledge Sharing:</strong> Worked as a part-time tutor for several years, teaching more than 100 students and receiving consistent positive feedback; shared educational videos online with over 7,000 views.</li>
+<li><strong>Media Coverage:</strong> Personal achievements have been reported by media at various levels in more than 40 articles.</li>
+<li><strong>Hobbies:</strong> Photography, swimming, traveling, and golf.</li>
+</ul>
+</section>
+</main>
+<main class="hidden" id="chinese-content">
+<section class="section">
+<h2 class="section-title">教育背景</h2>
+<div class="subsection">
+<div class="institution">香港中文大学（深圳）数据科学学院 | 中国深圳</div>
+<div class="degree">人工智能与机器人 · 理学硕士在读</div>
+<div class="date">2024.08 — 预计 2027.03</div>
+<ul>
+<li>研究生入学奖学金、杰出贡献奖学金、书院奖学金。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="institution">中国地质大学（武汉）数学与物理学院 | 中国武汉</div>
+<div class="degree">理学学士，主修物理学专业（GPA: 88.33），辅修经济学专业（GPA: 89.23）</div>
+<div class="date">2020.09 - 2024.06</div>
+<ul>
+<li>获得中国地质大学十大标兵学生（本科生最高荣誉）等各类奖项、奖学金、荣誉称号30余项。</li>
+<li>学术发表：<em>Applied Physics Express</em> (Q2) 15 117001，DOI: 10.35848/1882-0786/ac9953。</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">经历</h2>
+<div class="subsection">
+<div class="subsection-title">
+<span>深圳思演知策科技有限公司</span>
+<span class="right-aligned-date">2026.07 — 至今</span>
+</div>
+<div class="position">算法工程师实习生 · 创始团队，核心研发</div>
+<div class="description">承接在私募阶段独立开发的 首版，主导核心架构迭代与新功能研发，将产品从投研分析拓展至交易执行。</div><ul><li>将金融数据工具、研究技能与多步工作流组织为统一的任务执行框架，负责工具路由、上下文管理与工作流编排，支撑 Web 与 App 两端的投研任务。</li><li>主导设计并上线投研用户画像系统，从历史交互中提取近期关注与长期研究偏好，分层存储并持续更新，在新会话中驱动数据检索、工具选择和分析内容，使智能体能跨会话延续用户的研究习惯，形成个性化投研助手。</li><li>开发 Trading Agent，将标的研究、独立复核和组合决策分配给不同智能体。交易 Agent 综合研究与复核意见，可发起补充研究，结合持仓约束确定仓位并生成订单计划。系统已接入真实证券账户。 负责券商接口与订单执行，使用 Python 对接富途 OpenD，实现委托去重、订单跟踪、持仓对账和交易信号同步。</li><li>主导券商盈利预测与估值、财务造假审计、金融事实核验三类环境建设。将专业工作转化为需要检索、计算和核验的多步任务，定义可用材料、证据时间边界与可验证的评分规则，供模型训练与评测使用。</li><li>主导构建面向 A 股与美股的技术面分析评测基准，以历史行情和研究底稿设计覆盖个股、行业与市场整体的多周期任务，系统评估模型在指标计算、盘面解读、技术推理和交易决策上的能力。为开放性判断建立可核验的评分标准，支持跨模型比较。</li></ul>
+</div><div class="subsection">
+<div class="subsection-title">
+<span>国内头部百亿私募</span>
+<span class="right-aligned-date">2026.03 — 2026.06</span>
+</div>
+<div class="position">金融大模型 Agent 算法实习生</div>
+<div class="description">面向私募研究员开发 首版投研工作台，建立金融知识库和可重复运行的产品评测基准。</div><ul><li>从零独立设计并开发 首版投研工作台，用 Python 实现任务拆解、多智能体并行调度和工具调用，接入金融数据源，整合研报知识图谱与原文证据检索，支持基于私募团队本地数据库的多标的复杂研究。 研究流程从记忆检索、图谱核查和实时数据补全，延伸到推理、复核与写回。</li><li>解析研报与财报，使用 Neo4j 构建金融实体关系图谱，用 SQLite 管理 7.5 万条事实与 23.4 万条证据，将研究结论关联至原文章节与表格，支持跨文档检索核验。 共享行业知识与个人观点分库存储，通过用户级隔离、写入校验与审计管理访问。</li><li>从真实投研会话中构建测试任务与评测基准，在相同数据快照下回放新旧版本，结合执行轨迹评估任务调度、工具调用、回答依据、时延与成本。区分检索遗漏、证据未被采用和无依据生成，为模型选型与工作流迭代提供可复现的对照。</li></ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">
+<span>国投证券股份有限公司 | 中国北京</span>
+<span class="right-aligned-date">2024 夏</span>
+</div>
+<div class="position">投资研究岗位，电子行业研究团队</div>
+<div class="description">成立于2006年的全牌照综合类证券公司，多项业务排名位居国内前列。</div>
+<ul>
+<li>搜集整理苹果生态相关行业、公司数据及动态信息，完成课题研究，撰写 AI 赋能下的苹果供应链行业深度报告。</li>
+<li>完成对扬杰科技、东微半导、大族激光、莱特光电等电子器件产品供应商的业务梳理与中报点评。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">
+<span>武汉麦思威科技有限公司 | 中国武汉</span>
+<span class="right-aligned-date">2023 夏</span>
+</div>
+<div class="position">硬件工程师岗位，研发中心</div>
+<div class="description">成立于2013年的高新技术企业，主要从事光电设备研发、设计和技术服务。</div>
+<ul>
+<li>协助带教组装、调试光电实验仪器，并焊接、装配各类电子模块与产品；独立完成电路设计、仿真、编程、PCB 打板、调试等流程。</li>
+<li>使用 C 语言开发嵌入式实时温度监测与报警系统，集成 DS18B20 和 MLX90614 传感器，实现精确温度测量、实时显示及可调节超温报警功能。</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">项目</h2>
+<div class="subsection">
+<div class="project-title">
+<span>ECHO：基于自演化可信手册的 Agent 事实核查系统</span>
+<span class="right-aligned-date">2025 - 2026</span>
+</div>
+<div class="description">已投稿至 ACL Rolling Review（ARR）。</div>
+<ul>
+<li>基于 LangChain 封装模型与工具调用，并自研 GRC 多阶段 Agent 编排流程：Generator 完成声明拆解、证据检索与判决生成，Reflector (Reflexion) 基于执行轨迹诊断，Curator 将诊断转化为可复用规则更新，使系统从单次推理扩展为可持续积累经验的事实核查 Agent。</li>
+<li>设计外部化规则手册与 Detection / Trust 双记忆机制，缓解 Agent 容易过度怀疑与规则漂移的问题；实现渐进式上下文披露，规划阶段读取规则摘要，判决阶段按需加载完整规则，在保持 94% 规则一致性的同时将峰值 token 消耗降低 95%，降低长链路推理中的上下文压力与调用成本。</li>
+<li>构建 ECHO-Bench 与评估流水线；系统在两个事实核查基准上均刷新 SOTA（ECHO-Bench 84.65%、AVeriTeC 87.05%），较最强 Agent 基线分别提升 13.15pp / 6.49pp，并辅助人工核查准确率较无辅助提升 13.6pp。</li>
+</ul>
+</div><div class="subsection">
+<div class="project-title">
+<span>AFAC 2026 · 市场参与者交易行为识别</span>
+<span class="right-aligned-date">2026</span>
+</div>
+<ul><li>基于约百只股票的 Level-2 行情构建交易行为特征，用弱监督模型识别不同类型的市场参与者。</li><li>通过对照提交比较标签构造与候选筛选策略，依据榜单反馈保留稳定基线，并回退表现退化的改动。 最高排名进入前 20 名。</li></ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>基于 LoRA 的 Qwen2.5 法律领域 LLM 微调</span>
+<span class="right-aligned-date">2025 夏</span>
+</div>
+<ul>
+<li>在 DISC-Law-SFT 中文法律数据集上微调 Qwen2.5 大语言模型，增强模型在法律领域的专业知识和文本生成能力，并优化资源利用效率。</li>
+<li>通过结合 4 位量化、参数高效微调（PEFT）及 LoRA 技术，构建高效微调流程，显著减少可训练参数，有效克服计算资源限制。</li>
+<li>成功使 LLM 适应法律领域，能够生成与语境相关的法律回答，并通过定性评估和训练损失曲线验证其有效性。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>基于注意力 Seq2Seq 与 MinGPT 的中英神经机器翻译</span>
+<span class="right-aligned-date">2025 夏</span>
+</div>
+<ul>
+<li>开发并对比评估两个用于中英机器翻译的神经网络机器翻译系统：基于 Bahdanau 注意力机制的 Seq2Seq 模型和经过微调的 MinGPT Transformer。</li>
+<li>在约 30,000 对句子语料库上训练，进行了全面的数据预处理，包括中英文的 BERT 分词，并成功训练两个模型，均实现合理翻译质量。</li>
+<li>设计带有双向 GRU 编码器和注意力机制的 Seq2Seq 模型，并通过连接中英序列进行自回归预测来适配 MinGPT 模型。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>基于 PyTorch 与原生实现的图像分类神经网络架构优化</span>
+<span class="right-aligned-date">2025 春</span>
+</div>
+<ul>
+<li>设计并优化用于 CIFAR-10 和 MNIST 数据集的深度神经网络，涵盖基于 PyTorch 迭代增强的残差架构，以及从零开始的 NumPy 核心组件实现。</li>
+<li>使用 ResNet 迁移学习、AdamW 结合余弦退火、Dropout 和数据增强等深度学习技术，将 CIFAR-10 测试集准确率提升至 94.3%，MNIST 测试集准确率高达 99.56%。</li>
+<li>基于 NumPy 手动实现激活函数、卷积层、优化器等神经网络核心组件，在数据集上实现 97.29% 的准确率，深度掌握网络底层原理与运作机制。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>复泊松比对声波传输耗散的影响研究</span>
+<span class="right-aligned-date">2023 - 2024</span>
+</div>
+<ul>
+<li>利用理论建模与仿真模拟推导泊松损耗因子并分析其对吸收率的影响。</li>
+<li>设计在共振频率为 82.1705 Hz 时横波吸收率高达 99.84%、而纵波吸收率仅为 0.286% 的人工超材料，体现出显著的吸收选择性。</li>
+<li>构建等效剪切模量与体积模量计算方法，深化对能量耗散机制的理解。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>关于虚拟沉浸绿色自然对情绪影响的 Meta 分析</span>
+<span class="right-aligned-date">2023 夏</span>
+</div>
+<ul>
+<li>使用 RevMan 软件对 13 项定量研究（n=1917）的数据进行整合分析，得出积极情感的标准化平均差（SMD）为 0.42，消极情感的标准化平均差（SMD）为 -0.39。</li>
+<li>运用高级统计方法生成并解读森林图和漏斗图，以评估潜在发表偏倚和研究异质性。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>基于贝叶斯方法的系外行星径向速度信号探测</span>
+<span class="right-aligned-date">2023 春</span>
+</div>
+<ul>
+<li>运用 Agatha 工具对 GJ551-ESPRESSO 数据集径向速度（RV）数据进行分析，结合贝叶斯周期图技术识别时间序列中的周期性信号。</li>
+<li>使用 ARMA 模型与 MCMC 方法获取轨道解并估计相关参数。</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="project-title">
+<span>具有各向异性共振的超薄弹性超材料实现纵波和横波全转换</span>
+<span class="right-aligned-date">2021 - 2022</span>
+</div>
+<ul>
+<li>设计由倾斜排列的各向异性谐振器构成的超薄超材料板，实现了在入射波长远大于厚度的条件下，P 波与 S 波之间超过 95% 的高效转换。</li>
+<li>构建并完善基于质量-弹簧模型的弹性波模态转换理论框架，达到解析计算结果与仿真结果高度一致。</li>
+<li>主导理论推导与部分仿真工作，成为同年级首位发表 SCI 论文的本科生。</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">学术发表</h2>
+<ul>
+<li>具有各向异性共振的超薄弹性超材料实现纵波和横波全转换，<em>Applied Physics Express</em> (Q2) 15 117001，DOI: 10.35848/1882-0786/ac9953。</li>
+</ul>
+</section>
+<section class="section">
+<h2 class="section-title">奖项与荣誉</h2>
+<ul>
+<li>香港中文大学（深圳）研究生入学奖学金（2024）、杰出贡献奖学金及书院奖学金。</li>
+<li>2024 年中国地质大学十大标兵学生（TOP10，本科生最高荣誉）。</li>
+<li>2024 年优秀毕业生。</li>
+<li>2021 年、2022 年校长奖学金（TOP 5%），2023 年校友奖学金（TOP 10）。</li>
+<li>2021 年、2023 年校级优秀学生干部，2022 年校级优秀学生。</li>
+<li>2023 年数学与物理学院“数理先锋”年度人物（学院最高荣誉）。</li>
+<li>获得若干学科竞赛、创新创业竞赛、社会实践奖项；大学期间获得各类奖项、奖学金、荣誉称号等共 30 余项。</li>
+</ul>
+</section>
+<section class="section">
+<h2 class="section-title">技能与证书</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<div class="skill-name">AI、数据与 Agent 系统</div>
+<div class="skill-details">多智能体系统、工具调用、RAG、LangChain、MCP、模型与产品评测、Neo4j、SQLite、PostgreSQL、富途 OpenD。</div>
+</div>
+<div class="skill-category">
+<div class="skill-name">编程与软件</div>
+<div class="skill-details">Python（PyTorch/TensorFlow）、R、COMSOL、ImageJ、LaTeX（熟练）；Matlab、SPSS（基础）。</div>
+</div>
+<div class="skill-category">
+<div class="skill-name">语言能力</div>
+<div class="skill-details">大学英语四/六级（CET-4/6），雅思 7.0，具备英文文献阅读、技术写作与跨团队沟通能力；普通话一级乙等。</div>
+</div>
+<div class="skill-category">
+<div class="skill-name">证书</div>
+<div class="skill-details">(AI+RPA) 开发者中级工程师认证；腾讯未来产品经理创造营结课证书。</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">其他信息</h2>
+<ul>
 
-                <div class="metric-grid" aria-label="Selected highlights">
-                    <div class="metric">
-                        <span class="metric-value">21 / 9 / 10</span>
-                        <span class="metric-label english-only">skills, agents, and workflows packaged for a finance research workbench</span>
-                        <span class="metric-label chinese-only hidden">金融投研工作台封装的 skill / agent / workflow</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">20K+</span>
-                        <span class="metric-label english-only">Neo4j nodes in the financial knowledge foundation</span>
-                        <span class="metric-label chinese-only hidden">金融知识底座 Neo4j 节点</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">84.65%</span>
-                        <span class="metric-label english-only">ECHO-Bench fact-checking accuracy</span>
-                        <span class="metric-label chinese-only hidden">ECHO-Bench 事实核查准确率</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">30+</span>
-                        <span class="metric-label english-only">awards, scholarships, and honors</span>
-                        <span class="metric-label chinese-only hidden">奖项、奖学金与荣誉称号</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact">
-                <span class="contact-item"><a href="mailto:heruichang@link.cuhk.edu.cn">heruichang@link.cuhk.edu.cn</a></span>
-                <span class="contact-item"><a href="https://changherui.github.io/">changherui.github.io</a></span>
-                <span class="contact-item english-only">Shenzhen, China</span>
-                <span class="contact-item chinese-only hidden">中国深圳</span>
-            </div>
-        </header>
-
-        <div class="content-shell">
-            <aside class="section-rail" aria-label="Page navigation">
-                <div class="section-rail-title">
-                    <span class="english-only">Sections</span>
-                    <span class="chinese-only hidden">目录</span>
-                </div>
-                <nav class="section-nav">
-                    <button type="button" onclick="scrollToSection(0)">
-                        <span class="english-only">Education</span>
-                        <span class="chinese-only hidden">教育</span>
-                    </button>
-                    <button type="button" onclick="scrollToSection(1)">
-                        <span class="english-only">Experience</span>
-                        <span class="chinese-only hidden">经历</span>
-                    </button>
-                    <button type="button" onclick="scrollToSection(2)">
-                        <span class="english-only">Projects</span>
-                        <span class="chinese-only hidden">项目</span>
-                    </button>
-                    <button type="button" onclick="scrollToSection(3)">
-                        <span class="english-only">Publication</span>
-                        <span class="chinese-only hidden">发表</span>
-                    </button>
-                    <button type="button" onclick="scrollToSection(4)">
-                        <span class="english-only">Awards</span>
-                        <span class="chinese-only hidden">荣誉</span>
-                    </button>
-                    <button type="button" onclick="scrollToSection(5)">
-                        <span class="english-only">Skills</span>
-                        <span class="chinese-only hidden">技能</span>
-                    </button>
-                    <button type="button" onclick="scrollToSection(6)">
-                        <span class="english-only">Other</span>
-                        <span class="chinese-only hidden">其他</span>
-                    </button>
-                </nav>
-            </aside>
-
-            <div class="content-panel">
-    <main id="english-content">
-        <section class="section">
-            <h2 class="section-title">Education</h2>
-
-            <div class="subsection">
-                <div class="institution">The Chinese University of Hong Kong, Shenzhen | Shenzhen, China</div>
-                <div class="degree">M.Sc. candidate in Artificial Intelligence and Robotics, School of Data Science (GPA: 3.83)</div>
-                <div class="date">Aug 2024 - Present | Expected Jul 2027</div>
-                <ul>
-                    <li>Postgraduate Admission Scholarship.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="institution">China University of Geosciences (Wuhan) | Wuhan, China</div>
-                <div class="degree">B.Sc. in Physics (GPA: 88.33) with Minor in Economics (GPA: 89.23), School of Mathematics and Physics</div>
-                <div class="date">Sep 2020 - Jun 2024</div>
-                <ul>
-                    <li>Top 10 Model Student of China University of Geosciences (Wuhan), the highest undergraduate honor; accumulated more than 30 awards, scholarships, and honors.</li>
-                    <li>Academic publication: <em>Applied Physics Express</em> (Q2) 15 117001, DOI: 10.35848/1882-0786/ac9953.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="subsection">
-                <div class="subsection-title">
-                    <span>Leading Domestic Private Fund (RMB 10B+ AUM)</span>
-                    <span class="right-aligned-date">Mar 2026 - Present</span>
-                </div>
-                <div class="position">Financial LLM Agent Algorithm Intern</div>
-                <ul>
-                    <li>Contributed to a production-grade multi-agent investment research system for private-fund workflows, covering long-horizon tasks such as research report understanding, target-company analysis, portfolio tracking, and fact checking. The workbench packages 21 skills, 9 agents, and 10 workflows, has been delivered to dozens of seed users, outperforms general Deep Research products and comparable domestic finance agents in core research evaluations and user feedback, and is expected to reach more than 100 users within the year.</li>
-                    <li>Designed long-chain execution workflows and tool-use mechanisms for investment research agents: memory retrieval, graph verification, real-time data completion, reasoning generation, and review/write-back. Used a Coordinator to plan multi-target and multi-theme tasks, route tools, generate parameters, and inject context, with fallback chains, rewrite retries, and exception recovery to improve long-chain task stability.</li>
-                    <li>Built the FundaCore financial knowledge foundation for structured parsing of multi-source financial data such as research reports and tables, preserving chapter/table structure and chunk-level evidence provenance before writing to databases and knowledge graphs. The system has accumulated 20K Neo4j nodes, 161K relationships, 75K SQLite facts, and 234K evidence records, supporting traceable RAG and financial fact verification through hybrid retrieval, reranking, and deduplication.</li>
-                    <li>Designed a dual-store architecture and multi-user isolation mechanism for investment research memory: a shared industry fact base for common facts and evidence, plus independent personalized memory stores for user views and preferences. Supported hot/cold memory tiering, time decay, event/ingest_time bitemporality, userId-level database isolation, read-only shared stores, write-path validation, and audit controls to reduce cross-user memory contamination risk.</li>
-                    <li>Built an Agent Harness and benchmark-driven data flywheel that parses historical session traces into workflow, tool pairing, subagent link, latency, and failure-taxonomy metrics. Productized the ECHO self-evolution project into a review-check quality gate, forming a non-parametric Agentic Learning loop of evaluation, failure attribution, new-test generation, reevaluation, and iteration on prompts, tool routing, and memory strategies.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="subsection-title">
-                    <span>SDIC Securities Co., Ltd. | Beijing, China</span>
-                    <span class="right-aligned-date">Summer 2024</span>
-                </div>
-                <div class="position">Investment Research Intern, Electronic Industry Research Team</div>
-                <div class="description">A fully licensed comprehensive securities firm established in 2006, with multiple business lines ranked among the top in China.</div>
-                <ul>
-                    <li>Collected industry, company, and news data across the Apple ecosystem to complete topic research and draft an in-depth report on the Apple supply chain empowered by Apple Intelligence.</li>
-                    <li>Reviewed businesses and interim results for electronic component suppliers including Yangjie Technology, Oriental Semi, Han's Laser, and Wright Optoelectronics.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="subsection-title">
-                    <span>Mesway Technology Co., Ltd. | Wuhan, China</span>
-                    <span class="right-aligned-date">Summer 2023</span>
-                </div>
-                <div class="position">Hardware Engineer Intern, R&amp;D Center</div>
-                <div class="description">A high-tech enterprise engaged in research, design, and technical services for optoelectronic equipment.</div>
-                <ul>
-                    <li>Assisted the mentor team in assembling and calibrating optoelectronic experimental instruments, soldered and assembled electronic modules and products, and independently completed circuit design, simulation, programming, PCB fabrication, and debugging.</li>
-                    <li>Developed an embedded real-time temperature monitoring and alarm system in C, integrating DS18B20 and MLX90614 sensors for precise temperature measurement, real-time display, and adjustable over-temperature alerts.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Projects</h2>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>ECHO: Agent Fact-Checking System Based on Self-Evolving Credibility Handbooks</span>
-                    <span class="right-aligned-date">2025 - 2026</span>
-                </div>
-                <div class="description">Submitted to EMNLP.</div>
-                <ul>
-                    <li>Built model and tool orchestration with LangChain and developed an in-house Generator-Reflector-Curator multi-stage agent workflow: the Generator decomposes claims, retrieves evidence, and produces verdicts; the Reflector diagnoses execution traces with Reflexion; and the Curator converts diagnoses into reusable rule updates, extending the system from single-shot reasoning to a fact-checking agent that accumulates experience.</li>
-                    <li>Designed an externalized rule handbook and a Detection / Trust dual-memory mechanism to mitigate over-skepticism and rule drift in agents. Implemented progressive context disclosure, reading rule summaries during planning and loading full rules only when needed at verdict time, maintaining 94% rule consistency while reducing peak token consumption by 95%.</li>
-                    <li>Built ECHO-Bench and the evaluation pipeline. The system achieves state-of-the-art results on two fact-checking benchmarks, 84.65% on ECHO-Bench and 87.05% on AVeriTeC, outperforming the strongest agent baselines by 13.15pp and 6.49pp respectively, and improving human-assisted fact-checking accuracy by 13.6pp over the unaided setting.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Qwen2.5 Legal-Domain LLM Fine-Tuning with LoRA</span>
-                    <span class="right-aligned-date">Summer 2025</span>
-                </div>
-                <ul>
-                    <li>Fine-tuned Qwen2.5 large language models on the DISC-Law-SFT Chinese legal dataset, enhancing domain-specific knowledge and text generation capabilities while optimizing resource utilization.</li>
-                    <li>Built an efficient fine-tuning pipeline by combining 4-bit quantization, parameter-efficient fine-tuning, and LoRA, significantly reducing trainable parameters and overcoming compute constraints.</li>
-                    <li>Adapted the LLM to the legal domain, enabling contextually relevant legal answers and validating effectiveness through qualitative evaluation and training-loss curves.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Chinese-to-English Neural Machine Translation with Seq2Seq Attention and MinGPT</span>
-                    <span class="right-aligned-date">Summer 2025</span>
-                </div>
-                <ul>
-                    <li>Developed and compared two neural machine translation systems for Chinese-to-English translation: a Bahdanau attention-based Seq2Seq model and a fine-tuned MinGPT Transformer.</li>
-                    <li>Trained on approximately 30,000 sentence pairs with comprehensive preprocessing, including BERT tokenization for both Chinese and English, and successfully produced reasonable translation quality from both models.</li>
-                    <li>Designed a Seq2Seq model with a bidirectional GRU encoder and attention mechanism, and adapted MinGPT by concatenating Chinese and English sequences for autoregressive prediction.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Image Classification Network Optimization with PyTorch and Native Implementation</span>
-                    <span class="right-aligned-date">Spring 2025</span>
-                </div>
-                <ul>
-                    <li>Designed and optimized deep neural networks for CIFAR-10 and MNIST, covering iteratively improved PyTorch residual architectures and NumPy implementations of core neural-network components from scratch.</li>
-                    <li>Applied deep-learning techniques including ResNet transfer learning, AdamW with cosine annealing, dropout, and data augmentation, improving test accuracy to 94.3% on CIFAR-10 and 99.56% on MNIST.</li>
-                    <li>Manually implemented activation functions, convolutional layers, optimizers, and other neural-network components in NumPy, achieving 97.29% accuracy and deepening understanding of network internals.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Impact of Complex Poisson Ratio on Sound Transmission Dissipation</span>
-                    <span class="right-aligned-date">2023 - 2024</span>
-                </div>
-                <ul>
-                    <li>Used theoretical modeling and simulation to derive the Poisson loss factor and analyze its influence on absorption rate.</li>
-                    <li>Designed an artificial metamaterial with a transverse-wave absorption rate of 99.84% at a resonance frequency of 82.1705 Hz, while the longitudinal-wave absorption rate was only 0.286%, demonstrating significant absorption selectivity.</li>
-                    <li>Developed a calculation method for equivalent shear and bulk moduli, deepening understanding of the energy dissipation mechanism.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Meta-Analysis of the Effects of Virtual Immersion in Green Nature on Affect</span>
-                    <span class="right-aligned-date">Summer 2023</span>
-                </div>
-                <ul>
-                    <li>Used RevMan to synthesize data from 13 quantitative studies (n=1917), obtaining a standardized mean difference of 0.42 for positive affect and -0.39 for negative affect.</li>
-                    <li>Generated and interpreted forest plots and funnel plots with advanced statistical methods to assess potential publication bias and research heterogeneity.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Bayesian Radial-Velocity Signal Detection for Exoplanets</span>
-                    <span class="right-aligned-date">Spring 2023</span>
-                </div>
-                <ul>
-                    <li>Used Agatha to analyze radial-velocity data from the GJ551-ESPRESSO dataset and combined Bayesian periodogram methods to identify periodic signals in time series.</li>
-                    <li>Used ARMA and MCMC methods to obtain orbital solutions and estimate related parameters.</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>Total P-Wave and S-Wave Conversion in Ultrathin Elastic Metamaterials with Anisotropic Resonance</span>
-                    <span class="right-aligned-date">2021 - 2022</span>
-                </div>
-                <ul>
-                    <li>Designed an ultrathin metamaterial plate composed of obliquely arranged anisotropic resonators, achieving more than 95% conversion between P waves and S waves under incident wavelengths far larger than the plate thickness.</li>
-                    <li>Built and refined a theoretical framework for elastic-wave mode conversion based on a mass-spring model, achieving high consistency between analytical calculations and simulations.</li>
-                    <li>Led the theoretical derivation and part of the simulation work, becoming the first undergraduate in the cohort to publish an SCI paper.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Publication</h2>
-            <ul>
-                <li>Total wave conversion in ultrathin elastic metamaterials with anisotropic resonance, <em>Applied Physics Express</em> (Q2) 15 117001, DOI: 10.35848/1882-0786/ac9953.</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Awards &amp; Honors</h2>
-            <ul>
-                <li>2024 Chinese University of Hong Kong, Shenzhen Postgraduate Admission Scholarship.</li>
-                <li>2024 China University of Geosciences (Wuhan) Top 10 Model Students, the highest undergraduate honor.</li>
-                <li>2024 Outstanding Graduate.</li>
-                <li>2021 and 2022 President's Scholarship (Top 5%); 2023 Alumni Scholarship (Top 10%).</li>
-                <li>2021 and 2023 University-level Outstanding Student Leader; 2022 University-level Outstanding Student.</li>
-                <li>2023 "Pioneer of Mathematics and Physics" Person of the Year, the highest honor in the School.</li>
-                <li>More than 30 awards, scholarships, and honors across academic competitions, innovation and entrepreneurship competitions, and social-practice activities.</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Skills &amp; Certificates</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-name">AI, Data, and Agent Systems</div>
-                    <div class="skill-details">LLM agents, multi-agent workflows, RAG, tool use, LangChain, benchmark/evaluation pipelines, Neo4j, SQLite.</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-name">Programming and Software</div>
-                    <div class="skill-details">Python (PyTorch/TensorFlow), R, COMSOL, ImageJ, LaTeX (proficient); Matlab and SPSS (basic).</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-name">Languages</div>
-                    <div class="skill-details">CET-4/6, IELTS 7.0, strong English reading, writing, listening, and speaking ability; Mandarin Level 1-B.</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-name">Certificates</div>
-                    <div class="skill-details">(AI+RPA) Developer Intermediate Engineer Certification; Tencent Future Product Manager Creation Camp completion certificate.</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Additional Information</h2>
-            <ul>
-                <li><strong>AI and Finance:</strong> Possesses cross-domain know-how in AI agents and finance, with hands-on experience implementing agent technologies in financial research scenarios.</li>
-                <li><strong>Investment Research:</strong> Has financial research internship experience and personal investment practice, with familiarity in secondary-market analysis and research.</li>
-                <li><strong>Leadership and Project Coordination:</strong> Held more than 10 student and social-work roles, including Student Union President; organized or participated in over 50 activities reaching more than 10,000 people, with new-media readership exceeding 600,000 views.</li>
-                <li><strong>Volunteer Experience:</strong> Participated in volunteer activities related to the Olympic Games, science popularization, epidemic prevention and control, international education, and astronomical observation, accumulating over 200 service hours.</li>
-                <li><strong>Teaching and Knowledge Sharing:</strong> Worked as a part-time tutor for several years, teaching more than 100 students and receiving consistent positive feedback; shared educational videos online with over 7,000 views.</li>
-                <li><strong>Media Coverage:</strong> Personal achievements have been reported by media at various levels in more than 40 articles.</li>
-                <li><strong>Hobbies:</strong> Photography, swimming, traveling, and golf.</li>
-            </ul>
-        </section>
-    </main>
-
-    <main id="chinese-content" class="hidden">
-        <section class="section">
-            <h2 class="section-title">教育背景</h2>
-
-            <div class="subsection">
-                <div class="institution">香港中文大学（深圳）数据科学学院 | 中国深圳</div>
-                <div class="degree">理学硕士在读，人工智能与机器人专业（GPA: 3.83）</div>
-                <div class="date">2024.08 - 今 | 预计2027年7月毕业</div>
-                <ul>
-                    <li>研究生入学奖学金。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="institution">中国地质大学（武汉）数学与物理学院 | 中国武汉</div>
-                <div class="degree">理学学士，主修物理学专业（GPA: 88.33），辅修经济学专业（GPA: 89.23）</div>
-                <div class="date">2020.09 - 2024.06</div>
-                <ul>
-                    <li>获得中国地质大学十大标兵学生（本科生最高荣誉）等各类奖项、奖学金、荣誉称号30余项。</li>
-                    <li>学术发表：<em>Applied Physics Express</em> (Q2) 15 117001，DOI: 10.35848/1882-0786/ac9953。</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">经历</h2>
-
-            <div class="subsection">
-                <div class="subsection-title">
-                    <span>国内头部百亿私募</span>
-                    <span class="right-aligned-date">2026.03 - 今</span>
-                </div>
-                <div class="position">金融大模型 Agent 算法实习生</div>
-                <ul>
-                    <li>面向私募金融投研场景，参与交付生产级 Multi-Agent 投研系统，覆盖研报理解、标的分析、组合跟踪、事实核查等长链路任务；系统以工作台形式落地，封装 21 个 skill / 9 个 agent / 10 个 workflow，已交付数十名种子用户使用，在核心投研任务的评测与用户反馈中均优于通用 Deep Research 产品及国内同类金融投研智能体，预计年内用户数突破百人。</li>
-                    <li>设计投研 Agent 的长链路执行 workflow 与 Tool Use 机制：记忆检索 -> 图谱核查 -> 实时数据补全 -> 推理生成 -> 审查写回；通过 Coordinator 进行多标的/多主题任务规划、工具路由、参数生成和上下文注入，并设计 fallback 链、改写重试和异常恢复机制，提升长链路任务的稳定性。</li>
-                    <li>建设 FundaCore 金融知识底座，面向研报、表格等多源金融数据结构化解析，保留章节/表格结构与 chunk 级证据溯源，并写入数据库与知识图谱；沉淀 Neo4j 2.0 万节点 / 16.1 万关系、SQLite 7.5 万 facts / 23.4 万证据；以混合检索 + 精排/去重支撑可追溯 RAG 和金融事实校验。</li>
-                    <li>设计投研 Memory 的“双库”架构与多用户隔离机制：共享行业事实库沉淀行业事实与证据，用户独立个性化记忆库沉淀个人观点和偏好；支持冷热记忆分层、时间衰减、event/ingest_time 双时态，并通过 userId 分库、共享库只读、写入路径校验与审计降低跨用户记忆污染风险。</li>
-                    <li>搭建 Agent Harness 与 Benchmark 评测驱动数据飞轮，将历史 session trace 解析为 workflow、tool pairing、subagent link、latency、failure taxonomy 等指标；将 ECHO 自演化项目产品化为 review-check 质量门禁，形成“评测 -> 失败归因 -> 新测生成 -> 再评测 -> prompt / 工具路由 / 记忆策略迭代”的非参数 Agentic Learning 闭环，在业务场景下持续优化长链路 Agent 表现。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="subsection-title">
-                    <span>国投证券股份有限公司 | 中国北京</span>
-                    <span class="right-aligned-date">2024 夏</span>
-                </div>
-                <div class="position">投资研究岗位，电子行业研究团队</div>
-                <div class="description">成立于2006年的全牌照综合类证券公司，多项业务排名位居国内前列。</div>
-                <ul>
-                    <li>搜集整理苹果生态相关行业、公司数据及动态信息，完成课题研究，撰写 AI 赋能下的苹果供应链行业深度报告。</li>
-                    <li>完成对扬杰科技、东微半导、大族激光、莱特光电等电子器件产品供应商的业务梳理与中报点评。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="subsection-title">
-                    <span>武汉麦思威科技有限公司 | 中国武汉</span>
-                    <span class="right-aligned-date">2023 夏</span>
-                </div>
-                <div class="position">硬件工程师岗位，研发中心</div>
-                <div class="description">成立于2013年的高新技术企业，主要从事光电设备研发、设计和技术服务。</div>
-                <ul>
-                    <li>协助带教组装、调试光电实验仪器，并焊接、装配各类电子模块与产品；独立完成电路设计、仿真、编程、PCB 打板、调试等流程。</li>
-                    <li>使用 C 语言开发嵌入式实时温度监测与报警系统，集成 DS18B20 和 MLX90614 传感器，实现精确温度测量、实时显示及可调节超温报警功能。</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">项目</h2>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>ECHO：基于自演化可信手册的 Agent 事实核查系统</span>
-                    <span class="right-aligned-date">2025 - 2026</span>
-                </div>
-                <div class="description">Submitted to EMNLP。</div>
-                <ul>
-                    <li>基于 LangChain 封装模型与工具调用，并自研 GRC 多阶段 Agent 编排流程：Generator 完成声明拆解、证据检索与判决生成，Reflector (Reflexion) 基于执行轨迹诊断，Curator 将诊断转化为可复用规则更新，使系统从单次推理扩展为可持续积累经验的事实核查 Agent。</li>
-                    <li>设计外部化规则手册与 Detection / Trust 双记忆机制，缓解 Agent 容易过度怀疑与规则漂移的问题；实现渐进式上下文披露，规划阶段读取规则摘要，判决阶段按需加载完整规则，在保持 94% 规则一致性的同时将峰值 token 消耗降低 95%，降低长链路推理中的上下文压力与调用成本。</li>
-                    <li>构建 ECHO-Bench 与评估流水线；系统在两个事实核查基准上均刷新 SOTA（ECHO-Bench 84.65%、AVeriTeC 87.05%），较最强 Agent 基线分别提升 13.15pp / 6.49pp，并辅助人工核查准确率较无辅助提升 13.6pp。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>基于 LoRA 的 Qwen2.5 法律领域 LLM 微调</span>
-                    <span class="right-aligned-date">2025 夏</span>
-                </div>
-                <ul>
-                    <li>在 DISC-Law-SFT 中文法律数据集上微调 Qwen2.5 大语言模型，增强模型在法律领域的专业知识和文本生成能力，并优化资源利用效率。</li>
-                    <li>通过结合 4 位量化、参数高效微调（PEFT）及 LoRA 技术，构建高效微调流程，显著减少可训练参数，有效克服计算资源限制。</li>
-                    <li>成功使 LLM 适应法律领域，能够生成与语境相关的法律回答，并通过定性评估和训练损失曲线验证其有效性。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>基于注意力 Seq2Seq 与 MinGPT 的中英神经机器翻译</span>
-                    <span class="right-aligned-date">2025 夏</span>
-                </div>
-                <ul>
-                    <li>开发并对比评估两个用于中英机器翻译的神经网络机器翻译系统：基于 Bahdanau 注意力机制的 Seq2Seq 模型和经过微调的 MinGPT Transformer。</li>
-                    <li>在约 30,000 对句子语料库上训练，进行了全面的数据预处理，包括中英文的 BERT 分词，并成功训练两个模型，均实现合理翻译质量。</li>
-                    <li>设计带有双向 GRU 编码器和注意力机制的 Seq2Seq 模型，并通过连接中英序列进行自回归预测来适配 MinGPT 模型。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>基于 PyTorch 与原生实现的图像分类神经网络架构优化</span>
-                    <span class="right-aligned-date">2025 春</span>
-                </div>
-                <ul>
-                    <li>设计并优化用于 CIFAR-10 和 MNIST 数据集的深度神经网络，涵盖基于 PyTorch 迭代增强的残差架构，以及从零开始的 NumPy 核心组件实现。</li>
-                    <li>使用 ResNet 迁移学习、AdamW 结合余弦退火、Dropout 和数据增强等深度学习技术，将 CIFAR-10 测试集准确率提升至 94.3%，MNIST 测试集准确率高达 99.56%。</li>
-                    <li>基于 NumPy 手动实现激活函数、卷积层、优化器等神经网络核心组件，在数据集上实现 97.29% 的准确率，深度掌握网络底层原理与运作机制。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>复泊松比对声波传输耗散的影响研究</span>
-                    <span class="right-aligned-date">2023 - 2024</span>
-                </div>
-                <ul>
-                    <li>利用理论建模与仿真模拟推导泊松损耗因子并分析其对吸收率的影响。</li>
-                    <li>设计在共振频率为 82.1705 Hz 时横波吸收率高达 99.84%、而纵波吸收率仅为 0.286% 的人工超材料，体现出显著的吸收选择性。</li>
-                    <li>构建等效剪切模量与体积模量计算方法，深化对能量耗散机制的理解。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>关于虚拟沉浸绿色自然对情绪影响的 Meta 分析</span>
-                    <span class="right-aligned-date">2023 夏</span>
-                </div>
-                <ul>
-                    <li>使用 RevMan 软件对 13 项定量研究（n=1917）的数据进行整合分析，得出积极情感的标准化平均差（SMD）为 0.42，消极情感的标准化平均差（SMD）为 -0.39。</li>
-                    <li>运用高级统计方法生成并解读森林图和漏斗图，以评估潜在发表偏倚和研究异质性。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>基于贝叶斯方法的系外行星径向速度信号探测</span>
-                    <span class="right-aligned-date">2023 春</span>
-                </div>
-                <ul>
-                    <li>运用 Agatha 工具对 GJ551-ESPRESSO 数据集径向速度（RV）数据进行分析，结合贝叶斯周期图技术识别时间序列中的周期性信号。</li>
-                    <li>使用 ARMA 模型与 MCMC 方法获取轨道解并估计相关参数。</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <div class="project-title">
-                    <span>具有各向异性共振的超薄弹性超材料实现纵波和横波全转换</span>
-                    <span class="right-aligned-date">2021 - 2022</span>
-                </div>
-                <ul>
-                    <li>设计由倾斜排列的各向异性谐振器构成的超薄超材料板，实现了在入射波长远大于厚度的条件下，P 波与 S 波之间超过 95% 的高效转换。</li>
-                    <li>构建并完善基于质量-弹簧模型的弹性波模态转换理论框架，达到解析计算结果与仿真结果高度一致。</li>
-                    <li>主导理论推导与部分仿真工作，成为同年级首位发表 SCI 论文的本科生。</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">学术发表</h2>
-            <ul>
-                <li>具有各向异性共振的超薄弹性超材料实现纵波和横波全转换，<em>Applied Physics Express</em> (Q2) 15 117001，DOI: 10.35848/1882-0786/ac9953。</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">奖项与荣誉</h2>
-            <ul>
-                <li>2024 香港中文大学（深圳）研究生入学奖学金。</li>
-                <li>2024 年中国地质大学十大标兵学生（TOP10，本科生最高荣誉）。</li>
-                <li>2024 年优秀毕业生。</li>
-                <li>2021 年、2022 年校长奖学金（TOP 5%），2023 年校友奖学金（TOP 10）。</li>
-                <li>2021 年、2023 年校级优秀学生干部，2022 年校级优秀学生。</li>
-                <li>2023 年数学与物理学院“数理先锋”年度人物（学院最高荣誉）。</li>
-                <li>获得若干学科竞赛、创新创业竞赛、社会实践奖项；大学期间获得各类奖项、奖学金、荣誉称号等共 30 余项。</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">技能与证书</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-name">AI、数据与 Agent 系统</div>
-                    <div class="skill-details">LLM Agent、Multi-Agent workflow、RAG、Tool Use、LangChain、Benchmark/评测流水线、Neo4j、SQLite。</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-name">编程与软件</div>
-                    <div class="skill-details">Python（PyTorch/TensorFlow）、R、COMSOL、ImageJ、LaTeX（熟练）；Matlab、SPSS（基础）。</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-name">语言能力</div>
-                    <div class="skill-details">大学英语四/六级（CET-4/6），雅思 7.0，具备英文文献阅读、技术写作与跨团队沟通能力；普通话一级乙等。</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-name">证书</div>
-                    <div class="skill-details">(AI+RPA) 开发者中级工程师认证；腾讯未来产品经理创造营结课证书。</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">其他信息</h2>
-            <ul>
-                <li><strong>AI 与金融交叉：</strong>具备 AI Agent 与金融交叉的 know-how，熟悉 Agent 等相关 AI 技术的金融场景落地。</li>
-                <li><strong>投资研究：</strong>具备金融投研实习经历和个人投资实践经验，熟悉二级市场分析与研究。</li>
-                <li><strong>领导力与项目统筹：</strong>拥有学生会主席等 10 余段学生工作与社会工作经历，共组织参与各类活动 50 余场，覆盖 10000 余人，新媒体阅读量达到 60 万+。</li>
-                <li><strong>志愿服务：</strong>参加奥运会、知识科普、疫情防控、国际教育、天文观测等多项志愿活动，参与志愿活动超 200 小时。</li>
-                <li><strong>教学与知识共享：</strong>利用课余时间兼职家教，多年时间教学超百名学生，获得学生及家长一致好评；在网络上分享多个知识类视频，播放量达 7000 余次。</li>
-                <li><strong>媒体报道：</strong>个人事迹被各级媒体宣传报道 40 余篇。</li>
-                <li><strong>爱好：</strong>摄影、游泳、旅游、高尔夫。</li>
-            </ul>
-        </section>
-    </main>
-            </div>
-        </div>
-    </div>
-
-    <script>
+<li><strong>投资研究：</strong>具备金融投研实习经历和个人投资实践经验，熟悉二级市场分析与研究。</li>
+<li><strong>领导力与项目统筹：</strong>拥有学生会主席等 10 余段学生工作与社会工作经历，共组织参与各类活动 50 余场，覆盖 10000 余人，新媒体阅读量达到 60 万+。</li>
+<li><strong>志愿服务：</strong>参加奥运会、知识科普、疫情防控、国际教育、天文观测等多项志愿活动，参与志愿活动超 200 小时。</li>
+<li><strong>教学与知识共享：</strong>利用课余时间兼职家教，多年时间教学超百名学生，获得学生及家长一致好评；在网络上分享多个知识类视频，播放量达 7000 余次。</li>
+<li><strong>媒体报道：</strong>个人事迹被各级媒体宣传报道 40 余篇。</li>
+<li><strong>爱好：</strong>摄影、游泳、旅游、高尔夫。</li>
+</ul>
+</section>
+</main>
+</div>
+</div>
+</div>
+<script>
         let isEnglish = true;
 
         function setLanguage(language) {
